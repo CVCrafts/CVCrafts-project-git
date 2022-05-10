@@ -22,7 +22,7 @@ server.get("/",cors(), async(req,res)=>{
 
 //Login post and get controller
 server.post('/login',async(req,res)=>{
-  
+  let storeRequest = req.body;
 
 })
 
