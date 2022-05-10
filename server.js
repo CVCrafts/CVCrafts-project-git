@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require("cors")
+const cors = require("cors");
+const mongoose = require('mongoose');
 const server = express();
 
 server.use(bodyParser.urlencoded({
@@ -22,7 +23,7 @@ server.get("/",cors(), async(req,res)=>{
 //Login post and get controller
 server.post('/login',async(req,res)=>{
   let holdRequest = req.body;
-  console.log(holdRequest);
+
 })
 
 
