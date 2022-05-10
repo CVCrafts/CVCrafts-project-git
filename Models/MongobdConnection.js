@@ -3,6 +3,11 @@ require('dotenv').config();
 
 let connectionString = process.env.CONNECTIONSTRING;
 
-export const MongooseConnenction = async () =>{
-    await mongoose.connect()
+const MongooseConnenction = async () =>{
+    await mongoose.connect(connectionString,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
 }
+
+module.exports = MongooseConnenction;
