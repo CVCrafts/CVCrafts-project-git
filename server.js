@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const mongoose = require('mongoose');
 const server = express();
+require('dotenv').config();
+
+
 
 server.use(bodyParser.urlencoded({
   extended: true
@@ -13,6 +16,10 @@ server.use(cors())
 const PORT = process.env.PORT || 5000;
 
 server.use(express.static("public"));
+
+
+
+
 
 
 // home get controller
