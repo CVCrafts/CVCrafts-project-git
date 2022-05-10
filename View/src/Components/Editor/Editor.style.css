@@ -1,0 +1,130 @@
+.BaFjt {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 7;
+    display: none;
+}
+
+.jiqQjb {
+    background-color: white;
+    width: 100%;
+    box-shadow: rgb(100, 100, 100) 0px 0px 5px 0px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.gPPcGe {
+    display: grid;
+    grid-template-columns: min-content 1fr 0px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.ktRwas {
+    display: grid;
+    grid-template-columns: min-content min-content min-content;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+}
+
+.bzcBIG {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.buzFio {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(32, 14, 50);
+    background-color: rgb(249, 250, 251);
+    padding: 6px 24px;
+}
+
+.eRUSZY {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 400px)
+{
+    .crdhUE {
+        margin-top: 3px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 768px)
+{
+    .crdhUE {
+        margin-top: 4px;
+        font-size: 15px;
+    }
+
+    .gPPcGe {
+        grid-template-columns: 60px 1fr 60px;
+    }
+}
+
+@media screen and (min-width: 980px)
+{
+    .crdhUE {
+        font-size: 16px;
+    }
+
+    .buzFio {
+        border-radius: 20px;
+        width: 100px;
+        height: 90px;
+    }    
+    .bzcBIG {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .ktRwas {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content;
+    }
+
+    .gPPcGe {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content min-content;
+    }
+
+    .BaFjt 
+    {
+        height: 100vh;
+        width: 120px;
+        display: flex;
+        padding-top: 32px;
+        flex-direction: column;
+    }
+
+    .jiqQjb {
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.05) 2px 1px 7px;
+        padding-bottom: 16px;
+    }
+}
+

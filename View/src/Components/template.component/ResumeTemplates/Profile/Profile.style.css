@@ -1,0 +1,12 @@
+
+/*========== PROFILE ==========*/
+.profile__description{
+    text-align:justify;
+  }
+
+  @media screen and (min-width: 968px){
+        
+  .profile__description{
+     text-align: center; 
+  }
+  }

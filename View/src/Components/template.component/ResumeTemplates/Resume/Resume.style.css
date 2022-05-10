@@ -1,0 +1,12 @@
+@media screen and (min-width: 968px){
+/* Classes modified for large screen size */
+.resume__left{
+    background: var(--container-color-alt);
+    height: inherit; 
+  }
+
+  .resume__left,
+  .resume__right{
+    padding: 0 1rem;
+  }
+}
