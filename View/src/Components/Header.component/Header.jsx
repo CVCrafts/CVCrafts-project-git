@@ -19,7 +19,7 @@ export class Header extends Component {
               </div>
             </span>
           </a>
-          <Link class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bd-color" to={"/login"}>Log In
+          <Link class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bd-color" to={"/register"}>Register Now
             <span class="flex items-center justify-center ml-2 -mr-1 md:ml-3 md:-mr-[6px]"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 18" class="w-[18px]"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12.36 9.016H3.33M10.164 6.83l2.196 2.186-2.196 2.187"></path><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6.879 5.542v-.7a2.763 2.763 0 012.764-2.763h3.663a2.756 2.756 0 012.756 2.756v8.355a2.764 2.764 0 01-2.764 2.764H9.634a2.756 2.756 0 01-2.755-2.756v-.707"></path></svg>
             </span>
           </Link>

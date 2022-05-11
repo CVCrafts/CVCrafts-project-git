@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Login.style.css'
 import Logo from '../../../images/CVCrafts.svg'
+import { Link } from 'react-router-dom'
 
 export class Login extends Component {
 	constructor(props) {
@@ -18,15 +19,15 @@ export class Login extends Component {
 <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
 		<div className="max-w-md w-full space-y-8">
 			<div>
-				<img className="mx-auto h-32 w-auto" src={Logo} alt="Workflow"/>
+				<img className="mx-auto h-32 w-auto" src={Logo} alt="CVCrafts"/>
 				<h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
 					Sign in to your account
 				</h2>
 				<p className="mt-2 text-center text-sm text-gray-600">
 					Or
-					<a href="/subscription" className="font-medium text-red-500 hover:text-red-400 ml-1">
-						start your 14-day free trial
-					</a>
+					<Link to={"/register"} className="font-medium text-red-500 hover:text-red-400 ml-1">
+						Register Now
+					</Link>
 				</p>
 			</div>
 			<form className="mt-8 space-y-6" action="" method="POST">
