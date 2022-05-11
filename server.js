@@ -9,13 +9,16 @@ const cors = require("cors");
 
 const mongoose = require("mongoose");
 
-const server = express();
+const bcrypt = require('bcrypt');
 
 const MongooseConnenction = require("./Models/MongobdConnection");
 
 const Users = require("./Models/Model");
 //#endregion
 
+const server = express();
+
+const saltRounds = 10;
 
 //#region Middleware method
 server.use(bodyParser.urlencoded({
@@ -45,27 +48,35 @@ server.get("/",cors(), async(req,res)=>{
 //Login post and get controller
 server.post("/login",async(req,res)=>{
   let storeRequest = await req.body;
-  // console.log(storeRequest);
-  // let {remember,email,password} = storeRequest;
-  console.log(storeRequest)
-  // const UserDocument = await new Users({
-  //   isremember: remember,
-  //   email: email,
-  //   password: password
-  // });
-  // console.log(UserDocument);
+
+  let {email,password} = storeRequest;
+ 
+
+
   res.redirect("/login");
 });
 
 server.post("/register", (req,res)=> {
   
-  let {password,confirmpassword} = req.body;
+  let {username,email,password,confirmpassword} = req.body;
   if((password !== "undefined") && (confirmpassword !== "undefined")){
     if (password !== confirmpassword) {
       res.redirect('/register')
     } else {
+      bcrypt.hash(password,saltRounds,async(error, result)=>{
+        if ((result !== "undefined") || (result !== "null")) {
+          const UserDocument = await new Users({
+            username: username,
+            email: email,
+            password: result,
+          });
+          UserDocument.save();
+        } else {
+          console.log(error.name + " " + error.message)
+        }
+      })
       res.redirect("/login")
-      console.log(req.body)
+      // console.log(req.body)
     }
   }
 })
