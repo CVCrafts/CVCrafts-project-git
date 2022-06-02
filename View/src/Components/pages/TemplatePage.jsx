@@ -1,6 +1,6 @@
 import "./TemplatePage.style.css";
 
-import html2pdf from "html2pdf.js";
+import html2pdf from "html2pdf.js/dist/html2pdf";
 
 import { Component } from "react";
 import ResumeLeft from "../template.component/ResumeTemplates/Resume/ResumeLeft";
