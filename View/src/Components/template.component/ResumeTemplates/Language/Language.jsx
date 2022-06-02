@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import '../SL.style.css'
+// import '../SL.style.css'
 
 
 export class Language extends Component {

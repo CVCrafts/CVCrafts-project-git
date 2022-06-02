@@ -4,7 +4,7 @@ import Social from '../Social/Social';
 import Profiles from '../Profile/Profiles';
 import Educations from '../Education/Education';
 import Skills from '../Skills/Skills';
-import './Resume.style.css'
+// import './Resume.style.css'
 
 export class ResumeLeft extends Component {
     constructor(props) {

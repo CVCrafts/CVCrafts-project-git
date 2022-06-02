@@ -88,8 +88,8 @@ class TemplatePage extends Component {
       //   before: ".newPage",
       //   avoid: ["h2", "tr", "h3", "h4", ".field","p","span","div","section","main","h1","Fragment"]
       // },
-      html2canvas: { scale: 1, logging: true, dpi: 192, letterRendering: true },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      html2canvas: { scale: 1, dpi: 192, letterRendering: true },
+      jsPDF: { unit: "pt", format: "a4", orientation: "portrait" },
     };
     html2pdf(areaCV, opt);
     // html2pdf()
@@ -101,7 +101,7 @@ class TemplatePage extends Component {
     }, 10000);
   };
   componentDidMount() {
-    this.scaleCv();
+    // this.scaleCv();
   }
   render() {
     return (
