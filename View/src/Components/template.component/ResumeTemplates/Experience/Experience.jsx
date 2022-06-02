@@ -7,7 +7,7 @@ export class Experience extends Component {
   render() {
     return (
       <Fragment>
-        <section class="experience section" id="experience">
+        <section class="experience section " id="experience">
             <h2 class="section-title">Experience</h2>
 
             <div class="experience__container bd-grid">

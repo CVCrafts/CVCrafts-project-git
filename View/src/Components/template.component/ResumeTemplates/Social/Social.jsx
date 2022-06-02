@@ -12,7 +12,7 @@ export class Social extends Component {
   render() {
     return (
       <Fragment>
-            <section class="social section">
+            <section class="social section ">
             <h2 class="section-title">SOCIAL</h2>
             <div class="social__container bd-grid">
                 <a href="https://www.linkedin.com/"  class="social__link"><i class="bx bxl-linkedin-square social__icon"></i>@Talha</a>

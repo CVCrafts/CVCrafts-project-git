@@ -225,7 +225,7 @@ img {
 .bd-container{ /*Changed happen*/
   max-width: 210mm; /*max-width 842px*/
   max-height: 297mm; /*max-width 595px*/
-  width: calc(100% - 3rem);
+  /* width: calc(100% - 3rem); */
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
 }
@@ -289,7 +289,7 @@ img {
     background: var(--container-color);
     box-shadow: 0 0 8px rgba(13,12,12,.15);
     width: 210mm; 
-    height: auto; /*297mm*/
+    height:auto; /*297mm*/
   }
 
   .generate-pdf{

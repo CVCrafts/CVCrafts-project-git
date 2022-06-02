@@ -81,6 +81,14 @@ server.post("/register", (req,res)=> {
   }
 })
 
+server.get("/editor", async(req,res)=>{
+  // code here
+})
+
+server.post("/editor", async(req,res)=>{
+  let {certificateName,certificateDescription} = req.body;
+  // res.redirect("/editor")
+})
 
 server.listen(PORT,()=>{console.log(`Server is running on port number ${PORT}`)})
 

@@ -8,26 +8,31 @@ import './Resume.style.css';
 
 
 export class ResumeRigth extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      rightState:[
+        <Experience/>,
+        <Certificates/>,
+        <References/>,
+        <Language/>,
+        <Interests/>
+      ]
+    }
+  }
   render() {
+    const {rightState} = this.state;
     return (
      <Fragment>
           <div className="resume__right">
-                      <div hidden={false}>
-                        {/* <!--========== EXPERIENCE ==========--> */}
-                            <Experience/>    
-                        {/* <!--========== CERTIFICATES ==========--> */}
-                            <Certificates/>
-    
-                        {/* <!--========== REFERENCES ==========--> */}
-                            <References/>
-    
-                        {/* <!--========== LANGUAGES ==========--> */}
-                            <Language/>
-                        
-                        {/* <!--========== INTERESTS ==========--> */}
-                            <Interests/>
-                       </div>
-                    </div>
+            { 
+              rightState
+              .map((elements,index) =>{
+                return elements
+              })
+              
+            }
+          </div>
      </Fragment>
     )
   }

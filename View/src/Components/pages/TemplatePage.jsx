@@ -2,7 +2,7 @@
 import './TemplatePage.style.css'
 
 import html2pdf from 'html2pdf.js';
-// import html2canvas from 'html2canvas';
+
 import { Component } from 'react';
 import ResumeLeft from '../template.component/ResumeTemplates/Resume/ResumeLeft'
 import ResumeRigth from '../template.component/ResumeTemplates/Resume/ResumeRigth';
@@ -61,38 +61,39 @@ class TemplatePage extends Component {
     }
     pdfDownload = () =>{
       
-      // this.scaleCv();
-      // let doc = new jsPDF('p','pt','a4');
+      this.scaleCv();
+      // let doc = new jsPDF('p','mm','a4');
       // doc.html(document.querySelector("#area-cv"), {
       //   callback: (pdf) => {
       //     pdf.save("mypdf.pdf");
       //   }
       // });
-      var areaCV = document.querySelectorAll('.resume');
+      var areaCV = document.getElementById('area-cv');
       var opt = {
         margin:       0,
         filename:     'myfile.pdf',
-        image:        { type: 'png', quality: 0.99 },
+        image:        { type: 'jpeg', quality: 0.99 },
       //   pagebreak: { 
-      //     // mode: ['avoid-all', 'css', 'legacy'] 
+      //     mode: ['avoid-all', 'css', 'legacy'] 
       // },
         pagebreak: {
-          // mode: ["css","avoid-all"],
-          avoid: ["tr","breakPage","p","span","h1","h2","h3","h4","section","main"],
-          after: ".newPage",
-          before: ".newPrior"
+          mode: ["css","avoid-all","legacy"],
+          // avoid: ["tr","breakPage","p","span","h1","h2","h3","h4","section","div","Fragment"],
+          after: ".page-break",
+          before: ".page-break"
         },
         // pagebreak: {
         //   before: ".newPage",
         //   avoid: ["h2", "tr", "h3", "h4", ".field","p","span","div","section","main","h1","Fragment"]
         // },
-        html2canvas:  { scale: 1, logging: true, dpi: 192, letterRendering: true, backgroundColor: null ,removeContainer: true},
+        html2canvas:  { scale: 1, logging: true, dpi: 192, letterRendering: true},
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait'}
       };
-      areaCV.forEach((cv) => {
-        html2pdf(cv, opt);
-      })
-      // html2pdf().set(opt).from(areaCV).save()
+      html2pdf(areaCV,opt)
+      // html2pdf()
+      //   .set(opt)
+      //   .from(areaCV)
+      //   .save()
       setTimeout(()=>{
         // this.removeScale()
       },10000);
@@ -112,7 +113,6 @@ class TemplatePage extends Component {
                 <div class="resume" id="area-cv" >
                     <ResumeLeft/>
                     <ResumeRigth/>
-
                 </div>           
             </main>
             {/* <a href="#" class="scrolltop" id="scroll-top">

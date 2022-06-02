@@ -18,7 +18,7 @@ export class ResumeLeft extends Component {
     return (
         <Fragment>
             <div className="resume__left">
-                    <div hidden={false}>
+                  
                         {/* <!--========== HOME ==========--> */}
                             <Home/>        
                         
@@ -32,7 +32,7 @@ export class ResumeLeft extends Component {
                             <Educations/>
                         {/* <!--========== SKILLS  ==========--> */}
                             <Skills/>
-                      </div>
+                     
                     </div>
         </Fragment>
     )
