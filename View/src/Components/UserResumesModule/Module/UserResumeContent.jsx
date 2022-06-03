@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ContentElement from "./ContentElement";
-import UserResumeSVG from "../../../images/UserResumeRedSVG.svg"
+import UserResumeSVG from "../../../images/UserResumeRedSVG.svg";
 
 class UserResumeContent extends Component {
   render() {
@@ -15,7 +15,7 @@ class UserResumeContent extends Component {
               Your first resume – 100% free, forever, all features, unlimited
               downloads, yes really.
             </p>
-            <div className="mt-6 grid grid-cols-1 justify-start gap-12 md:mt-10 md:grid-cols-[min-content_1fr]">
+            <div className="mt-6 grid grid-cols-0 justify-start gap-12 md:mt-10 md:grid-cols-[min-content_1fr]">
               <div className="hidden h-[200px] w-[200px] items-center justify-center rounded-full border-[10px] border-solid border-white md:flex">
                 {/* svg here */}
                 <img
@@ -24,7 +24,10 @@ class UserResumeContent extends Component {
                   srcset={UserResumeSVG}
                 />
               </div>
-              <div className="">{/* list of resume select */}</div>
+              <div className="">
+                {/* list of resume select */}
+                <ContentElement />
+              </div>
             </div>
           </div>
         </div>

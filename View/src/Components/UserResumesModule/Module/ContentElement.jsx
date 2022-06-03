@@ -5,7 +5,7 @@ class ContentElement extends Component {
     return (
       <>
         <div className="mb-5 sm:hidden">
-          <div className="dashboard__item flex items-center border border-dashed border-gray-300">
+          {/* <div className="dashboard__item relative h-16 w-full cursor-pointer rounded-lg flex items-center border border-dashed border-gray-300">
             <div className="flex grow items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ class ContentElement extends Component {
             </button>
             <button
               type="button"
-              className="border-none cursor-pointer appearance-none touch-manipulation flex items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bg-primaryBlack maxsm:hidden"
+              className="border-none cursor-pointer appearance-none touch-manipulation flex items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bg-primaryBlack md:hidden"
             >
               <span className="flex items-center justify-center mr-2 -ml-1 md:mr-3 md:-ml-[6px] pb-0 md:pb-0">
                 <svg
@@ -72,7 +72,7 @@ class ContentElement extends Component {
               </span>
               Create
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="w-full">
           <div className="space-y-4 md:space-y-5">
@@ -84,15 +84,11 @@ class ContentElement extends Component {
                 <p className="text-lg font-bold md:text-xl">Resume No. 1</p>
               </div>
               <div className="relative flex items-stretch"></div>
-              <div className="rounded-full bg-gradient-to-r from-brandPink to-brandRed px-3 text-sm font-bold text-white absolute left-8 top-full z-[6] -mt-2 flex w-min shrink space-x-1 sm:left-12 md:-left-8 md:top-0 md:mt-3">
-                <span className="">free</span>
-                <span className="ml-1 mt-1 -mr-[3px] h-1 w-1 rounded-full bg-white"></span>
-              </div>
             </a>
           </div>
         </div>
-        <div className="mt-5 hidden sm:block">
-          <div className="dashboard__item flex items-center border border-dashed border-gray-300">
+        <div className="mt-5 sm:block">
+          <div className="dashboard__item relative h-16 w-full cursor-pointer rounded-full md:pr-8 md:px-16 sm:px-9 flex items-center border border-dashed border-gray-300">
             <div className="flex grow items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,9 +135,9 @@ class ContentElement extends Component {
                 ></path>
               </svg>
             </button>
-            <button
+            {/* <button
               type="button"
-              className="border-none cursor-pointer appearance-none touch-manipulation flex items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bg-primaryBlack maxsm:hidden"
+              className="appearance-none bg-primaryBlack border-none cursor-pointer flex font-extrabold h-10 hover:opacity-80 items-center justify-center maxsm:hidden min-w-[120px] outline-none px-7 py-2 rounded-full text-[15px] text-white touch-manipulation"
             >
               <span className="flex items-center justify-center mr-2 -ml-1 md:mr-3 md:-ml-[6px] pb-0 md:pb-0">
                 <svg
@@ -158,7 +154,7 @@ class ContentElement extends Component {
                 </svg>
               </span>
               Create
-            </button>
+            </button> */}
           </div>
         </div>
       </>

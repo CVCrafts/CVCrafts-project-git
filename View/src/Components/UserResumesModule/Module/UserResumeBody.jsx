@@ -7,15 +7,15 @@ class UserResumeBody extends Component {
       <>
         <div className="mx-auto w-full max-w-[1100px] px-6 sm:px-8 md:px-10 lg:px-12 xl:px-14">
           <div className="pt-8 lg:pt-24">
-            <div className="grid w-full grid-cols-1 justify-items-center lg:grid-cols-[1fr_min-content] lg:gap-4 xl:w-[110%]">
+            <div className="grid w-full grid-cols-1 justify-items-center lg:grid-cols-[1fr_min-content] lg:gap-2 xl:w-[110%]">
               <div className=" relative w-[100px] md:w-[120px] lg:order-2 lg:w-[310px] xl:w-[340px]">
                 {/* Logo and svg image */}
-                <img
-                  className="ml-2 w-11/12 lg:px-1"
+                {/* <img
+                  className="ml-2 w-full lg:px-1"
                   src={UserImage}
                   alt=""
                   srcset={UserImage}
-                />
+                /> */}
                 
               </div>
               <div className="mt-10 w-full md:mt-12 lg:mt-8">
