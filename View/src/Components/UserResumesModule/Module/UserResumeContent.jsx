@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ContentElement from "./ContentElement";
+import UserResumeSVG from "../../../images/UserResumeRedSVG.svg"
 
 class UserResumeContent extends Component {
   render() {
@@ -17,10 +18,13 @@ class UserResumeContent extends Component {
             <div className="mt-6 grid grid-cols-1 justify-start gap-12 md:mt-10 md:grid-cols-[min-content_1fr]">
               <div className="hidden h-[200px] w-[200px] items-center justify-center rounded-full border-[10px] border-solid border-white md:flex">
                 {/* svg here */}
+                <img
+                  src={UserResumeSVG}
+                  alt="{UserResumeSVG}"
+                  srcset={UserResumeSVG}
+                />
               </div>
-              <div className="">
-                
-              </div>
+              <div className="">{/* list of resume select */}</div>
             </div>
           </div>
         </div>

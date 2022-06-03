@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UserImage from "../../../images/rocket.svg"
+import UserImage from "../../../images/UserResumeSVG.svg"
 import UserResumeContent from "./UserResumeContent";
 class UserResumeBody extends Component {
   render() {
@@ -10,12 +10,12 @@ class UserResumeBody extends Component {
             <div className="grid w-full grid-cols-1 justify-items-center lg:grid-cols-[1fr_min-content] lg:gap-4 xl:w-[110%]">
               <div className=" relative w-[100px] md:w-[120px] lg:order-2 lg:w-[310px] xl:w-[340px]">
                 {/* Logo and svg image */}
-                {/* <img
-                  className="ml-2 w-3/5 lg:px-1"
+                <img
+                  className="ml-2 w-11/12 lg:px-1"
                   src={UserImage}
                   alt=""
                   srcset={UserImage}
-                /> */}
+                />
                 
               </div>
               <div className="mt-10 w-full md:mt-12 lg:mt-8">
