@@ -1,9 +1,22 @@
 import React, { Component } from "react";
-import TemplateResume from "../../images/ResumeCv_00.png";
+
 import "./template.style.css";
-import { Link } from "react-router-dom";
+import TemplateThum from "./TemplateModule/TemplateThum";
 export class Template extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      template: [
+        "bw_1",
+        "bw_2",
+        "bw_3",
+      ],
+    };
+
+  }
+
   render() {
+    const { template } = this.state;
     return (
       <React.Fragment>
         <section className="bg-lightGray">
@@ -23,50 +36,9 @@ export class Template extends Component {
                     data-lazy-function=""
                     data-ll-status="entered"
                   >
-                    <div className="templateContainer relative flex justify-center rounded pb-[145%]">
-                      <Link
-                        className="templateWrapper w-full absolute rounded "
-                        to={"/editor"}
-                      >
-                        {" "}
-                        {/*template__fadeOut*/}
-                        <img
-                          src={TemplateResume}
-                          alt=""
-                          srcset={TemplateResume}
-                        />
-                      </Link>
-                    </div>
-
-                    <div className="templateContainer relative flex justify-center rounded pb-[145%]">
-                      <Link
-                        className="templateWrapper w-full absolute rounded "
-                        to={"/editor"}
-                      >
-                        {" "}
-                        {/*template__fadeOut*/}
-                        <img
-                          src={TemplateResume}
-                          alt=""
-                          srcset={TemplateResume}
-                        />
-                      </Link>
-                    </div>
-
-                    <div className="templateContainer relative flex justify-center rounded pb-[145%]">
-                      <Link
-                        className="templateWrapper w-full absolute rounded "
-                        to={"/editor"}
-                      >
-                        {" "}
-                        {/*template__fadeOut*/}
-                        <img
-                          src={TemplateResume}
-                          alt=""
-                          srcset={TemplateResume}
-                        />
-                      </Link>
-                    </div>
+                    {template.map((TemplateThums, index) => {
+                      return <TemplateThum key={index} templateID={ TemplateThums}/>
+                    })}
                   </div>
                 </div>
               </div>

@@ -15,8 +15,8 @@ class UserResumeContent extends Component {
               Your first resume – 100% free, forever, all features, unlimited
               downloads, yes really.
             </p>
-            <div className="mt-6 grid grid-cols-0 justify-start gap-12 md:mt-10 md:grid-cols-[min-content_1fr]">
-              <div className="hidden h-[200px] w-[200px] items-center justify-center rounded-full border-[10px] border-solid border-white md:flex">
+            <div className="mt-6 grid grid-cols-1 grid-flow-row w-full justify-start gap-3 md:mt-10 md:grid-cols-none">
+              <div className="hidden h-[200px] w-[200px] items-center justify-center rounded-full border-[10px] border-solid border-white md:flex lg:flex">
                 {/* svg here */}
                 <img
                   src={UserResumeSVG}

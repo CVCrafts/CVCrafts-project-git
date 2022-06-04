@@ -4,7 +4,7 @@ import Certificates from '../Certificates/Certificate';
 import References from '../References/References';
 import Language from '../Language/Language';
 import Interests from '../Interests/Interests';
-// import './Resume.style.css';
+import './Resume.style.css';
 
 
 export class ResumeRigth extends Component {

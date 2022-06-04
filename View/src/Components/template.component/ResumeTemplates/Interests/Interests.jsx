@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-// import './Interest.style.css'
+import './Interest.style.css'
 
 export class Interests extends Component {
   render() {

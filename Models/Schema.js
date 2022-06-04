@@ -6,4 +6,10 @@ const UserSchema = new mongoose.Schema({
     password: String,
 })
 
-module.exports = UserSchema;
+const LoginSchema = new mongoose.Schema({
+  email: String,
+  password: String,
+  isLogin: Boolean,
+});
+
+module.exports = {UserSchema,LoginSchema};

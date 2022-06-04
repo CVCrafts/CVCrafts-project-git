@@ -1,6 +1,6 @@
 
 import React, { Component, Fragment } from 'react'
-// import './Home.style.css'
+import './Home.style.css'
 
 export class Home extends Component {
     constructor(props) {

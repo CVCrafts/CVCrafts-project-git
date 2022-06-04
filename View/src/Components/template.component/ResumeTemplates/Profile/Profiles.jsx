@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-// import './Profile.style.css'
+import './Profile.style.css'
 
 export class Profiles extends Component {
     constructor(props) {

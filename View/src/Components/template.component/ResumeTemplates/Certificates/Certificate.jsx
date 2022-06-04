@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import CertificateContainer from "./Certificate.component/CertificateContainer";
-// import "./Certificate.style.css";
+import "./Certificate.style.css";
 export class Certificates extends Component {
   constructor(props) {
     super(props);

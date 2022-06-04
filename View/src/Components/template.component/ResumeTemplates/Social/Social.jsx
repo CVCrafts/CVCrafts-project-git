@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-// import "./Social.style.css";
+import "./Social.style.css";
 
 export class Social extends Component {
   constructor(props) {

@@ -14,7 +14,6 @@ class TemplatePage extends Component {
     this.pdfDownload = this.pdfDownload.bind(this);
     this.themeChange = this.themeChange.bind(this);
   }
-
   themeChange = (e) => {
     e.preventDefault();
     const themeButton = document.getElementById("theme-button");
