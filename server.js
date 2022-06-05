@@ -50,15 +50,15 @@ server.post("/login", async (req, res) => {
   let storeRequest = await req.body;
 
   let { email, password } = storeRequest;
-
-  if (password !== "undefined" && password !== "null") {
-    bcrypt.hash(password, saltRounds, (error, securePassword) => {
+  let passwords = password;
+  if (passwords !== "undefined" && passwords !== "null") {
+    bcrypt.hash(passwords, saltRounds, (error, securePassword) => {
       Users.findOne({ email: { $all: `${email}` } }, (err, result) => {
-        console.log(result);
-        password !== "undefine" &&
-          bcrypt.compare(password, result.password, function (err, results) {
+        // console.log(result);
+        result ? ({ password } = result) : (password = "");
+        result &&
+          bcrypt.compare(passwords, password, function (err, results) {
             if (results) {
-              console.log(results);
               // update all ready object in database here in future..
               const LoginUser = new LoginUsers({
                 email: email,
@@ -67,10 +67,13 @@ server.post("/login", async (req, res) => {
               });
               isLogin = true;
               LoginUser.save();
+              res.redirect("/resume");
             } else {
+              results ? "" : res.redirect(404,"/login");
               console.log(error);
             }
           });
+        result ? "" : res.redirect(404,"/login");
       });
     });
   }
