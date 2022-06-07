@@ -42,79 +42,43 @@ MongooseConnenction().catch((err) => console.log(err));
 // create user
 
 // home get controller
-server.get("/", cors(), async (req, res) => {});
+// server.get("/", cors(), async (req, res) => {});
 
-//Login post and get controller
-server.post("/login", async (req, res) => {
-  var isLogin = false;
-  let storeRequest = await req.body;
-
-  let { email, password } = storeRequest;
-  let passwords = password;
-  if (passwords !== "undefined" && passwords !== "null") {
-    bcrypt.hash(passwords, saltRounds, (error, securePassword) => {
-      Users.findOne({ email: { $all: `${email}` } }, (err, result) => {
-        // console.log(result);
-        result ? ({ password } = result) : (password = "");
-        result &&
-          bcrypt.compare(passwords, password, function (err, results) {
-            if (results) {
-              // update all ready object in database here in future..
-              const LoginUser = new LoginUsers({
-                email: email,
-                password: securePassword,
-                isLogin: true,
-              });
-              isLogin = true;
-              LoginUser.save();
-              res.redirect("/resume");
-            } else {
-              results ? "" : res.redirect(404,"/login");
-              console.log(error);
-            }
-          });
-        result ? "" : res.redirect(404,"/login");
-      });
-    });
-  }
-});
-
-server.post("/register", (req, res) => {
-  let { username, email, password, confirmpassword } = req.body;
-  if (password !== "undefined" && confirmpassword !== "undefined") {
-    if (password !== confirmpassword) {
-      res.redirect("/register");
-    } else {
-      bcrypt.hash(password, saltRounds, (error, result) => {
-        if (result !== "null") {
-          const UserDocument = new Users({
-            username: username,
-            email: email,
-            password: result,
-          });
-          UserDocument.save();
-        } else {
-          console.log(error.name + " " + error.message);
-        }
-      });
-
-      // console.log(req.body)
-    }
-  }
-  res.redirect("/login");
-});
-
-server.get("/resume/content/", async (req, res) => {
-  // code here
-  console.log(req.query.templateID);
-});
-
-server.post("/resume/content/", async (req, res) => {
-  let { templateID } = req.query;
-  console.log(req.query.templateID);
-  // res.redirect("/editor")
-});
 
 server.listen(PORT, () => {
   console.log(`Server is running on port number ${PORT}`);
 });
+
+
+
+
+/*
+const { requiresAuth } = require('express-openid-connect');
+
+app.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
+*/
+
+/*
+Configure Router
+const { auth } = require('express-openid-connect');
+
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: 'a long, randomly-generated string stored in env',
+  baseURL: 'http://localhost:3000/',
+  clientID: 'bkH5hl2y8yObNeOlSkJHga2cO44rV124',
+  issuerBaseURL: 'https://miansonu.us.auth0.com'
+};
+
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
+
+// req.isAuthenticated is provided from the auth router
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
+
+*/

@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:5000/",
   "dependencies": {
+    "@auth0/auth0-react": "^1.10.1",
     "@craco/craco": "^6.4.3",
     "@material-tailwind/react": "^0.3.4",
     "@reduxjs/toolkit": "^1.8.1",
