@@ -1,22 +1,35 @@
-import React from "react";
-import LogoImage from "../../../images/CVCrafts.svg"
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import LogoImage from "../../../images/CVCrafts.svg";
+import { useAuth0 } from "@auth0/auth0-react";
+
 const UserResumeHeader = () => {
+  const { loginWithPopup, isAuthenticated, logout } = useAuth0();
+  const isLoginLogoutNowFuncation = () => {
+    if (isAuthenticated) {
+      logout();
+    } else {
+      loginWithPopup();
+    }
+  }
+
   return (
     <>
       <div className="bg-homeBackgroundColor px-6 pt-0 pb-2 sm:px-8 md:px-10 md:pb-4 lg:px-12 lg:pb-6 xl:px-14">
         <div className="flex w-full items-center justify-between">
-          <a
-            href="#"
+          <Link
+            to={`/`}
             className="appearance-none no-underline decoration-current relative hover:opacity-80"
-                  >
-                      <img src={LogoImage} alt="" srcset={LogoImage} />
-          </a>
+          >
+            <img src={LogoImage} alt="" srcset={LogoImage} />
+          </Link>
           <div className="flex w-auto items-center space-x-3 sm:space-x-6">
             <button
               type="button"
               class="border-none cursor-pointer appearance-none touch-manipulation flex items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bg-primaryBlack"
+              
             >
-              Login
+              {!isAuthenticated ? "Login" : "Logout"}
               <span class="flex items-center justify-center ml-2 -mr-1 md:ml-3 md:-mr-[6px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
