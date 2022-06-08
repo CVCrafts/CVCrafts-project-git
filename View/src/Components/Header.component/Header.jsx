@@ -13,10 +13,10 @@ export const Header = () => {
     localStorage.removeItem("isLogin");
     localStorage.setItem("isLogin", isAuthenticated);
     let isSign = localStorage.getItem("isLogin");
-    CallHomeAPI();
-    // if (isSign) {
-    //   CallHomeAPI();
-    // }
+    // CallHomeAPI();
+    if (isSign) {
+      CallHomeAPI();
+    }
   }, [isAuthenticated]);
 
   const CallHomeAPI = async () => {
@@ -25,8 +25,10 @@ export const Header = () => {
       const response = await axios.get(`http://localhost:5000/`, {
         headers: {
           authorization: `Bearer ${token}`,
+          "Content-Type":"application/json"
         },
       });
+      console.log(response);
     } catch (error) {
       console.log(error.message);
     }

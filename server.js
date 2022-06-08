@@ -29,11 +29,14 @@ var jwtCheck = jwt({
   audience: "CVCrafts",
   issuer: "https://miansonu.us.auth0.com/",
   algorithms: ["RS256"],
+}).unless({
+  path: ["/", "/resume"],
 });
 
 const server = express();
 
-server.use(jwtCheck);
+server.use("/",jwtCheck);
+
 const saltRounds = 10;
 
 //#region Middleware method
@@ -65,16 +68,17 @@ MongooseConnenction().catch((err) => console.log(err));
 //#region call header route
 server.get("/", async (req, res) => {
   try {
-    const accessToken = req.headers?.authorization.split(" ")[1];
+    const accessToken = req?.headers?.authorization?.split(" ")[1];
     const response = await axios.get("https://miansonu.us.auth0.com/userinfo", {
       headers: {
-        authorization: `Bearer ${accessToken}`
-      }
+        authorization: `Bearer ${accessToken}`,
+      },
     });
-    const userInfo = response.data;
-      res.send(userInfo);
+    const userInfo = response?.data;
+    console.log(userInfo);
+    res.send(userInfo);
   } catch (error) {
-    console.log(error.message)
+    console.log(error.message);
   }
 });
 //#endregion
