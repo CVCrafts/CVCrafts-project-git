@@ -15,6 +15,8 @@ root.render(
         domain={`miansonu.us.auth0.com`}
         clientId={`bkH5hl2y8yObNeOlSkJHga2cO44rV124`}
         redirectUri={window.location.origin}
+        audience="CVCrafts"
+        scope="openid profile email"
       >
         <App />
       </Auth0Provider>

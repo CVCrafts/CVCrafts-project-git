@@ -6,20 +6,36 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 
 export const Header = () => {
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, logout, getAccessTokenSilently } =
+    useAuth0();
 
   useEffect(() => {
     localStorage.removeItem("isLogin");
     localStorage.setItem("isLogin", isAuthenticated);
+    let isSign = localStorage.getItem("isLogin");
     CallHomeAPI();
+    // if (isSign) {
+    //   CallHomeAPI();
+    // }
   }, [isAuthenticated]);
 
-  const CallHomeAPI = () => {
-    axios
-      .get(`http://localhost:5000/`).then(response => {
-        console.log(response.data)
-      })
-      .catch((error) => console.log(error.message));
+  const CallHomeAPI = async () => {
+    try {
+      const token = await getAccessTokenSilently();
+      const response = await axios.get(`http://localhost:5000/`, {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+
+    // axios
+    //   .get(`http://localhost:5000/`).then(response => {
+    //     console.log(response.data)
+    //   })
+    //   .catch((error) => console.log(error.message));
   };
   const isLoginLogoutNowFuncation = () => {
     if (isAuthenticated) {

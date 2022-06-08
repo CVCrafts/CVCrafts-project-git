@@ -14,10 +14,26 @@ const bcrypt = require("bcrypt");
 const MongooseConnenction = require("./Models/MongobdConnection");
 
 const { Users, LoginUsers } = require("./Models/Model");
+var { expressjwt: jwt } = require("express-jwt");
+var jwks = require("jwks-rsa");
+const { default: axios } = require("axios");
 //#endregion
+
+var jwtCheck = jwt({
+  secret: jwks.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: "https://miansonu.us.auth0.com/.well-known/jwks.json",
+  }),
+  audience: "CVCrafts",
+  issuer: "https://miansonu.us.auth0.com/",
+  algorithms: ["RS256"],
+});
 
 const server = express();
 
+server.use(jwtCheck);
 const saltRounds = 10;
 
 //#region Middleware method
@@ -44,9 +60,22 @@ MongooseConnenction().catch((err) => console.log(err));
 // home get controller
 // server.get("/", cors(), async (req, res) => { });
 
+// express-jwt config
+
 //#region call header route
-server.get("/", (req, res) => {
-  res.send("Hello world to home route");
+server.get("/", async (req, res) => {
+  try {
+    const accessToken = req.headers?.authorization.split(" ")[1];
+    const response = await axios.get("https://miansonu.us.auth0.com/userinfo", {
+      headers: {
+        authorization: `Bearer ${accessToken}`
+      }
+    });
+    const userInfo = response.data;
+      res.send(userInfo);
+  } catch (error) {
+    console.log(error.message)
+  }
 });
 //#endregion
 //#region call header route
