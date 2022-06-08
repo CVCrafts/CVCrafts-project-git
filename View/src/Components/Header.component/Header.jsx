@@ -1,11 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import "./header.style.css";
 import Logo from "../../images/CVCrafts.svg";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import axios from "axios";
 
 export const Header = () => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+
+  useEffect(() => {
+    localStorage.removeItem("isLogin");
+    localStorage.setItem("isLogin", isAuthenticated);
+    CallHomeAPI();
+  }, [isAuthenticated]);
+
+  const CallHomeAPI = () => {
+    axios
+      .get(`http://localhost:5000/`).then(response => {
+        console.log(response.data)
+      })
+      .catch((error) => console.log(error.message));
+  };
+  const isLoginLogoutNowFuncation = () => {
+    if (isAuthenticated) {
+      logout();
+    } else {
+      loginWithRedirect({
+        redirectUri: window.location.origin + "/resume",
+      });
+    }
+  };
   return (
     <div className="relative z-10">
       <header
@@ -41,9 +65,11 @@ export const Header = () => {
           <button
             class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bd-color"
             // to={"/register"}
-            onClick={loginWithRedirect}
+            onClick={() => {
+              isLoginLogoutNowFuncation();
+            }}
           >
-            Register Now
+            {isAuthenticated ? "Logout Now" : "Register Now"}
             <span class="flex items-center justify-center ml-2 -mr-1 md:ml-3 md:-mr-[6px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

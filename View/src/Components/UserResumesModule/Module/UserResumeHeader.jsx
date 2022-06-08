@@ -4,14 +4,16 @@ import LogoImage from "../../../images/CVCrafts.svg";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const UserResumeHeader = () => {
-  const { loginWithPopup, isAuthenticated, logout } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   const isLoginLogoutNowFuncation = () => {
     if (isAuthenticated) {
       logout();
     } else {
-      loginWithPopup();
+      loginWithRedirect({
+        redirectUri: window.location.origin + "/resume",
+      });
     }
-  }
+  };
 
   return (
     <>
@@ -27,7 +29,9 @@ const UserResumeHeader = () => {
             <button
               type="button"
               class="border-none cursor-pointer appearance-none touch-manipulation flex items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bg-primaryBlack"
-              
+              onClick={() => {
+                isLoginLogoutNowFuncation();
+              }}
             >
               {!isAuthenticated ? "Login" : "Logout"}
               <span class="flex items-center justify-center ml-2 -mr-1 md:ml-3 md:-mr-[6px]">

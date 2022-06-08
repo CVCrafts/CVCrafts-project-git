@@ -42,15 +42,22 @@ MongooseConnenction().catch((err) => console.log(err));
 // create user
 
 // home get controller
-// server.get("/", cors(), async (req, res) => {});
+// server.get("/", cors(), async (req, res) => { });
 
+//#region call header route
+server.get("/", (req, res) => {
+  res.send("Hello world to home route");
+});
+//#endregion
+//#region call header route
+server.get("/resume", cors(), async (req, res) => {
+  res.send("Hello world to resume route");
+});
+//#endregion
 
 server.listen(PORT, () => {
   console.log(`Server is running on port number ${PORT}`);
 });
-
-
-
 
 /*
 const { requiresAuth } = require('express-openid-connect');
