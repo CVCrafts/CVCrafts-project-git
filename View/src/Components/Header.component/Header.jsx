@@ -13,32 +13,36 @@ export const Header = () => {
     localStorage.removeItem("isLogin");
     localStorage.setItem("isLogin", isAuthenticated);
     let isSign = localStorage.getItem("isLogin");
+
+    const CallHomeAPI = async () => {
+      try {
+        const token = await getAccessTokenSilently({
+          audience: `CVCrafts`,
+          scope: "openid profile email",
+        });
+        const response = await axios.get(`http://localhost:5000/`, {
+          headers: {
+            authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+            withCredentials:true,
+          },
+        });
+      } catch (error) {
+        console.log(error.message);
+      }
+
+      // axios
+      //   .get(`http://localhost:5000/`).then(response => {
+      //     console.log(response.data)
+      //   })
+      //   .catch((error) => console.log(error.message));
+    };
     // CallHomeAPI();
     if (isSign) {
       CallHomeAPI();
     }
-  }, [isAuthenticated]);
+  }, [getAccessTokenSilently]);
 
-  const CallHomeAPI = async () => {
-    try {
-      const token = await getAccessTokenSilently();
-      const response = await axios.get(`http://localhost:5000/`, {
-        headers: {
-          authorization: `Bearer ${token}`,
-          "Content-Type":"application/json"
-        },
-      });
-      console.log(response);
-    } catch (error) {
-      console.log(error.message);
-    }
-
-    // axios
-    //   .get(`http://localhost:5000/`).then(response => {
-    //     console.log(response.data)
-    //   })
-    //   .catch((error) => console.log(error.message));
-  };
   const isLoginLogoutNowFuncation = () => {
     if (isAuthenticated) {
       logout();

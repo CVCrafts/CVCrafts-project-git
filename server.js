@@ -15,6 +15,7 @@ const MongooseConnenction = require("./Models/MongobdConnection");
 
 const { Users, LoginUsers } = require("./Models/Model");
 var { expressjwt: jwt } = require("express-jwt");
+// const jwt = require('jsonwebtoken').verify;
 var jwks = require("jwks-rsa");
 const { default: axios } = require("axios");
 //#endregion
@@ -24,18 +25,59 @@ var jwtCheck = jwt({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: "https://miansonu.us.auth0.com/.well-known/jwks.json",
+    credentialsRequired: true,
+    jwksUri: "https://cvcrafts.us.auth0.com/.well-known/jwks.json",
   }),
   audience: "CVCrafts",
-  issuer: "https://miansonu.us.auth0.com/",
+  issuer: "https://cvcrafts.us.auth0.com/",
   algorithms: ["RS256"],
 }).unless({
-  path: ["/", "/resume"],
+  path:[]
 });
 
 const server = express();
 
-server.use("/",jwtCheck);
+server.use("/", jwtCheck);
+
+// server.use(function (req, res, next) {
+//   console.log("------------------------------------");
+//   console.log("route middleware to verify a token");
+//   console.log("");
+//   // check header or url parameters or post parameters for token
+//   var token =
+//     req?.body.access_token ||
+//     req?.query.access_token ||
+//     req?.headers["x-access-token"] ||
+//     req?.cookies.access_token;
+//   console.log("req.cookies.access_token:", req?.cookies?.access_token);
+//   console.log("token:", token);
+//   // decode token
+//   if (token) {
+//     // verifies secret and checks exp
+//     jwt.verify(token, app.get("secret"), function (err, decoded) {
+//       if (err) {
+//         console.log("jwt.verify ERROR");
+//         return res.json({
+//           success: false,
+//           message: "Failed to authenticate token.",
+//           err: err,
+//         });
+//       } else {
+//         console.log("jwt.verify OK");
+//         // if everything is good, save to request for use in other routes
+//         req.decoded = decoded;
+//         next();
+//       }
+//     });
+//   } else {
+//     // if there is no token
+//     // return an error
+//     return res.status(403).send({
+//       success: false,
+//       message: "No token provided.",
+//     });
+//   }
+// });
 
 const saltRounds = 10;
 
@@ -48,7 +90,7 @@ server.use(
 server.use(bodyParser.json());
 server.use(cors());
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.NODE_EXPRESS_PORT || 3001;
 
 server.use(express.static("public"));
 //#endregion
@@ -56,7 +98,7 @@ server.use(express.static("public"));
 //#region Mongobd method
 
 //#endregion
-MongooseConnenction().catch((err) => console.log(err));
+MongooseConnenction().catch((err) => console.log(err.message));
 
 // create user
 
@@ -69,13 +111,16 @@ MongooseConnenction().catch((err) => console.log(err));
 server.get("/", async (req, res) => {
   try {
     const accessToken = req?.headers?.authorization?.split(" ")[1];
-    const response = await axios.get("https://miansonu.us.auth0.com/userinfo", {
-      headers: {
-        authorization: `Bearer ${accessToken}`,
-      },
-    });
+    const response = await axios
+      .get("https://cvcrafts.us.auth0.com/userinfo", {
+        headers: {
+          authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+          withCredentials: true,
+        },
+      })
+      .catch((error) => console.log(error.message));
     const userInfo = response?.data;
-    console.log(userInfo);
     res.send(userInfo);
   } catch (error) {
     console.log(error.message);
@@ -88,37 +133,13 @@ server.get("/resume", cors(), async (req, res) => {
 });
 //#endregion
 
+server.use(function (err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    res.status(401).send("invalid token...");
+  } else {
+    next(err);
+  }
+});
 server.listen(PORT, () => {
   console.log(`Server is running on port number ${PORT}`);
 });
-
-/*
-const { requiresAuth } = require('express-openid-connect');
-
-app.get('/profile', requiresAuth(), (req, res) => {
-  res.send(JSON.stringify(req.oidc.user));
-});
-*/
-
-/*
-Configure Router
-const { auth } = require('express-openid-connect');
-
-const config = {
-  authRequired: false,
-  auth0Logout: true,
-  secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'http://localhost:3000/',
-  clientID: 'bkH5hl2y8yObNeOlSkJHga2cO44rV124',
-  issuerBaseURL: 'https://miansonu.us.auth0.com'
-};
-
-// auth router attaches /login, /logout, and /callback routes to the baseURL
-app.use(auth(config));
-
-// req.isAuthenticated is provided from the auth router
-app.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-});
-
-*/

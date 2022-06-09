@@ -12,11 +12,12 @@ root.render(
   <>
     <Provider store={store}>
       <Auth0Provider
-        domain={`miansonu.us.auth0.com`}
-        clientId={`bkH5hl2y8yObNeOlSkJHga2cO44rV124`}
+        domain={process.env.REACT_APP_AUTHOPROVIDER_DOMAIN}
+        clientId={process.env.REACT_APP_AUTHOPROVIDER_CLIENTID}
         redirectUri={window.location.origin}
-        audience="CVCrafts"
-        scope="openid profile email"
+        audience={process.env.REACT_APP_AUTHOPROVIDER_AUDIENCE}
+        scope={process.env.REACT_APP_AUTHOPROVIDER_SCOPE}
+        useRefreshTokens={true}
       >
         <App />
       </Auth0Provider>
