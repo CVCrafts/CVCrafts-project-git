@@ -13,7 +13,6 @@ export const Header = () => {
     localStorage.removeItem("isLogin");
     localStorage.setItem("isLogin", isAuthenticated);
     let isSign = localStorage.getItem("isLogin");
-
     const CallHomeAPI = async () => {
       try {
         const token = await getAccessTokenSilently({
@@ -24,9 +23,10 @@ export const Header = () => {
           headers: {
             authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
-            withCredentials:true,
+            withCredentials: true,
           },
         });
+        console.log(response);
       } catch (error) {
         console.log(error.message);
       }

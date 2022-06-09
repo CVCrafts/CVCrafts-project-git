@@ -26,13 +26,13 @@ var jwtCheck = jwt({
     rateLimit: true,
     jwksRequestsPerMinute: 5,
     credentialsRequired: true,
-    jwksUri: "https://cvcrafts.us.auth0.com/.well-known/jwks.json",
+    jwksUri: process.env.NODE_JWTSURI,
   }),
-  audience: "CVCrafts",
-  issuer: "https://cvcrafts.us.auth0.com/",
-  algorithms: ["RS256"],
+  audience: process.env.NODE_AUDIENC,
+  issuer: process.env.NODE_ISSUER,
+  algorithms: [process.env.NODE_ALGORITHMS],
 }).unless({
-  path:[]
+  path: [],
 });
 
 const server = express();
@@ -96,9 +96,9 @@ server.use(express.static("public"));
 //#endregion
 
 //#region Mongobd method
+MongooseConnenction().catch((err) => console.log(err.message));
 
 //#endregion
-MongooseConnenction().catch((err) => console.log(err.message));
 
 // create user
 
