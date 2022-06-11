@@ -5,10 +5,10 @@ export class Interests extends Component {
   render() {
     return (
       <Fragment>
-        <section class="interests section">
-            <h2 class='section-title'>Interests</h2>
+        <section className="interests section">
+            <h2 className='section-title'>Interests</h2>
 
-            <div class='interests__container bd-grid'>
+            <div className='interests__container bd-grid'>
                 <div className='interests__content'>
                 <i className='bx bx-headphone interests__icon' ></i>
                 <span className='interests__name'>Music</span>

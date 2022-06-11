@@ -3,7 +3,6 @@ import "./Login.style.css";
 import Logo from "../../../images/CVCrafts.svg";
 import { Link } from "react-router-dom";
 
-
 export class Login extends Component {
   constructor(props) {
     super(props);
@@ -85,21 +84,21 @@ export class Login extends Component {
               <div>
                 <button
                   type="submit"
-                  class=" font-serif group relative w-full flex justify-center py-2 px-4 border border-red-300 text-sm font-medium rounded-md text-black bg-red-400 hover:bg-red-300 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                  className=" font-serif group relative w-full flex justify-center py-2 px-4 border border-red-300 text-sm font-medium rounded-md text-black bg-red-400 hover:bg-red-300 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                 >
-                  <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                  <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                     {/* <!-- Heroicon name: solid/lock-closed --> */}
                     <svg
-                      class="h-5 w-5 text-red-500 group-hover:text-red-400"
+                      className="h-5 w-5 text-red-500 group-hover:text-red-400"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      aria-hidden="True"
+                      ariaHidden="True"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </span>

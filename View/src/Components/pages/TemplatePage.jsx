@@ -6,7 +6,7 @@ import { Component } from "react";
 import ResumeLeft from "../template.component/ResumeTemplates/Resume/ResumeLeft";
 import ResumeRigth from "../template.component/ResumeTemplates/Resume/ResumeRigth";
 
-class TemplatePage extends Component {
+export class TemplatePage extends Component {
   constructor(props) {
     super(props);
     this.scaleCv = this.scaleCv.bind(this);
@@ -25,7 +25,7 @@ class TemplatePage extends Component {
     const selectedTheme = localStorage.getItem("selected-theme");
     const selectedIcon = localStorage.getItem("selected-icon");
 
-    // We obtain the current theme that the interface has by validating the dark-theme class
+    // We obtain the current theme that the interface has by validating the dark-theme className
     const getCurrentTheme = () =>
       document.body.classList.contains(darkTheme) ? "dark" : "light";
 
@@ -106,26 +106,26 @@ class TemplatePage extends Component {
     return (
       <>
         <i
-          class="bx bx-moon change-theme"
+          className="bx bx-moon change-theme"
           title="Theme"
           id="theme-button"
           onClick={this.themeChange}
         ></i>
         <i
-          class="bx bx-download generate-pdf"
+          className="bx bx-download generate-pdf"
           title="Generate PDF"
           id="resume-button"
           onClick={this.pdfDownload}
         ></i>
-        <main class="l-main bd-container">
+        <main className="l-main bd-container">
           {/* <!-- All elements within this div, is generated in PDF --> */}
-          <div class="resume" id="area-cv">
+          <div className="resume" id="area-cv">
             <ResumeLeft />
             <ResumeRigth />
           </div>
         </main>
-        {/* <a href="#" class="scrolltop" id="scroll-top">
-                <i class="bx bx-up-arrow-alt scrolltop"></i>
+        {/* <a href="#" className="scrolltop" id="scroll-top">
+                <i className="bx bx-up-arrow-alt scrolltop"></i>
             </a> */}
       </>
     );

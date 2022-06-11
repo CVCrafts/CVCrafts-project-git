@@ -28,4 +28,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default Educations;
+export default connect(mapStateToProps,null)(Educations);

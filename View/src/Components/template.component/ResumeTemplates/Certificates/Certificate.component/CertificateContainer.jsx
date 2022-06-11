@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class CertificateContainer extends Component {
+export class CertificateContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,10 +10,10 @@ class CertificateContainer extends Component {
   render() {
     return (
       <>
-        <div class="certificatie__container bd-grid">
-          <div class="certificate__content">
-            <h3 class="certificate__title">{this.props.certificateName}</h3>
-            <p class="certificate__description">
+        <div className="certificatie__container bd-grid">
+          <div className="certificate__content">
+            <h3 className="certificate__title">{this.props.certificateName}</h3>
+            <p className="certificate__description">
               {this.props.certificateDescription}
             </p>
           </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ResumeList from "./ListsOfResumeUserCreate/ResumeList";
 
 class ContentElement extends Component {
   render() {
@@ -16,6 +17,7 @@ class ContentElement extends Component {
             </summary>
             <div className="p-4">
               <p className="">user resume list</p>
+              <ResumeList/>
             </div>
           </details>
         </div>

@@ -7,47 +7,50 @@ export class Footer extends Component {
         <div className="w-full bg-white">
           <div className="pt-16 pb-16 w-full lg:w-[90%] max-w-[1240px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
             <div className="mt-18 grid grid-cols-1 md:grid-cols-2 md:gap-6">
-              <div class="w-full">
+              <div className="w-full">
                 <div id="userFeedbackWrapper">
                   <form className="flex flex-col " id="userFeedbackForm">
                     <label
-                      for="footerUserFeedback"
-                      class="text-2xl font-extrabold"
+                      htmlFor="footerUserFeedback"
+                      className="text-2xl font-extrabold"
                     >
                       Do you have feedback?
                     </label>
-                    <div class="mt-2 flex max-w-[500px] items-center border-b-2 border-solid border-gray-300 pb-2">
+                    <div className="mt-2 flex max-w-[500px] items-center border-b-2 border-solid border-gray-300 pb-2">
                       <textarea
                         id="userFeedbackArea"
                         name="userFeedback"
-                        class="mt-1 block grow resize-none appearance-none text-xl placeholder-gray-500 outline-none border-none overflow-auto overflow-y-hidden border-transparent focus:outline-none focus:border-transparent shadow-none outline-0 outline-offset-0 focus:outline-0 focus:outline-offset-0 ring-transparent focus:ring-transparent p-0"
+                        className="mt-1 block grow resize-none appearance-none text-xl placeholder-gray-500 outline-none border-none overflow-auto overflow-y-hidden border-transparent focus:outline-none focus:border-transparent shadow-none outline-0 outline-offset-0 focus:outline-0 focus:outline-offset-0 ring-transparent focus:ring-transparent p-0"
                         placeholder="Enter feedback"
                         rows="1"
                       ></textarea>
                       <button
                         type="submit"
-                        class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80 text-white bg-gradient-to-r from-brandPink to-brandRed h-11 w-11 min-w-min rounded-full"
+                        className="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80 text-white bg-gradient-to-r from-brandPink to-brandRed h-11 w-11 min-w-min rounded-full"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 25"
-                          class="w-7"
+                          className="w-7"
                         >
                           <path
                             stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                             d="M9.723 18.952l5.275-6.25-5.275-6.25"
                           ></path>
                         </svg>
                       </button>
                     </div>
                   </form>
-                  <div id="userFeedbackThankyou" class="hidden justify-center">
-                    <div class="w-40">
-                      <video autoplay="" loop="" class="w-full h-auto">
+                  <div
+                    id="userFeedbackThankyou"
+                    className="hidden justify-center"
+                  >
+                    <div className="w-40">
+                      <video autoPlay="" loop="" className="w-full h-auto">
                         <source
                           src="https://prod.flowcvassets.com/other/thank_you_gif.mp4"
                           type="video/mp4"
@@ -61,20 +64,20 @@ export class Footer extends Component {
             </div>
             <div className="mt-18 w-full md:mt-0">
               <div className="grid grid-cols-[auto_auto] md:justify-end gap-16 md:gap-24 lg:gap-40">
-                <div class="flex flex-col items-start">
-                  <h3 class="text-color text-xl">CVCrafts</h3>
+                <div className="flex flex-col items-start">
+                  <h3 className="text-color text-xl">CVCrafts</h3>
                   <a
-                    class="mt-3 block py-3 text-base hover:opacity-80 "
+                    className="mt-3 block py-3 text-base hover:opacity-80 "
                     href="/about"
                   >
                     About
                   </a>
                 </div>
-                <div class="flex flex-col items-start">
-                  <h3 class="text-color text-xl">Help</h3>
+                <div className="flex flex-col items-start">
+                  <h3 className="text-color text-xl">Help</h3>
                   <a
                     href="/contact"
-                    class="block py-3 text-base hover:opacity-80"
+                    className="block py-3 text-base hover:opacity-80"
                   >
                     Contact us
                   </a>
@@ -82,22 +85,22 @@ export class Footer extends Component {
               </div>
             </div>
             <div className="mt-14 grid w-full grid-cols-1 items-center md:grid-cols-[min-content_auto]">
-              <div class="w-full md:order-2">
-                <div class="flex flex-col md:-mr-3 md:flex-row md:items-center md:justify-end">
-                  <p class="flex items-center text-2xl font-extrabold md:mr-8 md:font-normal">
+              <div className="w-full md:order-2">
+                <div className="flex flex-col md:-mr-3 md:flex-row md:items-center md:justify-end">
+                  <p className="flex items-center text-2xl font-extrabold md:mr-8 md:font-normal">
                     Share with your friends
                   </p>
-                  <div class="mt-5 -ml-3 grid grid-cols-[min-content_min-content_min-content_min-content_min-content]  gap-6 md:mt-0 md:ml-0 ">
+                  <div className="mt-5 -ml-3 grid grid-cols-[min-content_min-content_min-content_min-content_min-content]  gap-6 md:mt-0 md:ml-0 ">
                     <button
                       type="button"
-                      class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
+                      className="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
                       id="shareBtn__twitter"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 20 20"
-                        class="w-11 p-3 hover:opacity-80"
+                        className="w-11 p-3 hover:opacity-80"
                       >
                         <path
                           fill="#200E32"
@@ -107,16 +110,16 @@ export class Footer extends Component {
                     </button>
                     <button
                       type="button"
-                      class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
+                      className="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
                       id="shareBtn__linkedin"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 20 20"
-                        class="w-11 p-3 hover:opacity-80 "
+                        className="w-11 p-3 hover:opacity-80 "
                       >
-                        <g clip-path="url(#clip0_260_2916)">
+                        <g clipPath="url(#clip0_260_2916)">
                           <path
                             fill="#200E32"
                             d="M18.524 0H1.476A1.476 1.476 0 000 1.476v17.048A1.476 1.476 0 001.476 20h17.048A1.476 1.476 0 0020 18.524V1.476A1.476 1.476 0 0018.524 0zM5.96 17.038H2.954V7.486h3.007v9.552zM4.456 6.162a1.726 1.726 0 111.736-1.724 1.702 1.702 0 01-1.736 1.724zm12.588 10.884H14.04v-5.218c0-1.54-.654-2.014-1.499-2.014-.891 0-1.766.672-1.766 2.053v5.179H7.767V7.493h2.891v1.324h.04c.29-.588 1.306-1.592 2.858-1.592 1.677 0 3.49.996 3.49 3.912l-.002 5.909z"
@@ -131,16 +134,16 @@ export class Footer extends Component {
                     </button>
                     <button
                       type="button"
-                      class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
+                      className="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
                       id="shareBtn__reddit"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 20 21"
-                        class="w-11 p-3 hover:opacity-80"
+                        className="w-11 p-3 hover:opacity-80"
                       >
-                        <g clip-path="url(#clip0_741_3518)">
+                        <g clipPath="url(#clip0_741_3518)">
                           <path
                             fill="#200E32"
                             d="M20 10.191a2.211 2.211 0 00-3.747-1.582c-1.509-.993-3.55-1.625-5.81-1.705l1.236-3.891 3.347.784-.005.048c0 .994.812 1.803 1.811 1.803.999 0 1.81-.809 1.81-1.803a1.81 1.81 0 00-3.494-.654l-3.607-.846a.308.308 0 00-.367.208L9.796 6.892c-2.365.028-4.508.665-6.083 1.687a2.202 2.202 0 00-1.5-.593C.993 7.986 0 8.976 0 10.191c0 .808.444 1.51 1.097 1.893a3.93 3.93 0 00-.071.714c0 3.259 4.006 5.91 8.932 5.91s8.934-2.651 8.934-5.91a3.96 3.96 0 00-.063-.675A2.194 2.194 0 0020 10.19zM5.647 11.704a1.317 1.317 0 012.636 0c0 .724-.591 1.312-1.318 1.312a1.317 1.317 0 01-1.318-1.312zm7.55 3.891c-.664.661-1.706.983-3.186.983L10 16.575l-.01.003c-1.482 0-2.524-.322-3.188-.983a.307.307 0 010-.436.31.31 0 01.439 0c.542.54 1.44.801 2.748.801l.011.003.01-.003c1.308 0 2.207-.262 2.75-.801.12-.121.317-.12.438 0 .12.12.12.316 0 .436zm-.157-2.579a1.316 1.316 0 01-1.317-1.312 1.317 1.317 0 012.635 0c0 .724-.591 1.312-1.318 1.312z"
@@ -159,14 +162,14 @@ export class Footer extends Component {
                     </button>
                     <button
                       type="button"
-                      class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
+                      className="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
                       id="shareBtn__fb"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 20 20"
-                        class="w-11 p-3 hover:opacity-80"
+                        className="w-11 p-3 hover:opacity-80"
                       >
                         <path
                           fill="#200E32"
@@ -176,14 +179,14 @@ export class Footer extends Component {
                     </button>
                     <button
                       type="button"
-                      class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
+                      className="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80"
                       id="shareBtn__wa"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 20 21"
-                        class="w-11 p-3  hover:opacity-80"
+                        className="w-11 p-3  hover:opacity-80"
                       >
                         <path
                           fill="#200E32"
@@ -194,44 +197,44 @@ export class Footer extends Component {
                   </div>
                 </div>
               </div>
-              <div class="mt-18 w-full md:mt-0">
-                <div class="w-full">
-                  <div class="flex items-center space-x-4 ">
+              <div className="mt-18 w-full md:mt-0">
+                <div className="w-full">
+                  <div className="flex items-center space-x-4 ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 33 33"
-                      class="w-7"
+                      className="w-7"
                     >
                       <path
                         fill="currentColor"
                         d="M16.678.5C7.846.5.694 7.668.694 16.5s7.152 16 15.984 16c8.848 0 16.016-7.168 16.016-16S25.526.5 16.678.5zm11.088 9.6h-4.72c-.512-2-1.248-3.92-2.208-5.696a12.847 12.847 0 016.928 5.696zM16.694 3.764A22.539 22.539 0 0119.75 10.1h-6.112a22.539 22.539 0 013.056-6.336zM4.31 19.7a13.187 13.187 0 01-.416-3.2c0-1.104.16-2.176.416-3.2h5.408c-.128 1.056-.224 2.112-.224 3.2s.096 2.144.224 3.2H4.31zm1.312 3.2h4.72c.512 2 1.248 3.92 2.208 5.696A12.779 12.779 0 015.622 22.9zm4.72-12.8h-4.72a12.779 12.779 0 016.928-5.696 25.039 25.039 0 00-2.208 5.696zm6.352 19.136a22.539 22.539 0 01-3.056-6.336h6.112a22.539 22.539 0 01-3.056 6.336zm3.744-9.536H12.95c-.144-1.056-.256-2.112-.256-3.2s.112-2.16.256-3.2h7.488c.144 1.04.256 2.112.256 3.2s-.112 2.144-.256 3.2zm.4 8.896a25.039 25.039 0 002.208-5.696h4.72a12.847 12.847 0 01-6.928 5.696zM23.67 19.7c.128-1.056.224-2.112.224-3.2s-.096-2.144-.224-3.2h5.408c.256 1.024.416 2.096.416 3.2s-.16 2.176-.416 3.2H23.67z"
                       ></path>
                     </svg>
-                    <div class="w-28">
-                      <div class="relative inline-block w-full">
+                    <div className="w-28">
+                      <div className="relative inline-block w-full">
                         <select
-                          class="flex w-full cursor-pointer appearance-none items-center rounded-full border-2 border-primaryBlack bg-transparent px-4 pr-8 font-bold leading-tight shadow focus:outline-none js-LanguageSelect bg-none h-12"
+                          className="flex w-full cursor-pointer appearance-none items-center rounded-full border-2 border-primaryBlack bg-transparent px-4 pr-8 font-bold leading-tight shadow focus:outline-none js-LanguageSelect bg-none h-12"
                           aria-label="language selection"
                           name="selectedLanguage"
+                          defaultValue={"en"}
+                          selected=""
                         >
-                          <option value="en" selected="">
-                            English
-                          </option>
+                          <option value="en">English</option>
                           <option value="de">Deutsch</option>
                         </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 pr-4 pt-[1px]">
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 pr-4 pt-[1px]">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 14 8"
-                            class="w-4"
+                            className="w-4"
                           >
                             <path
                               stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
                               d="M12.834 1.083L7 6.917 1.167 1.084"
                             ></path>
                           </svg>

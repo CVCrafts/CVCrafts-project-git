@@ -40,7 +40,7 @@ MongooseConnenction().catch((err) => console.log(err.message));
 
 server.use("/",homeRouter)
 
-
+server.use("/resume",resumeRouter)
 
 
 

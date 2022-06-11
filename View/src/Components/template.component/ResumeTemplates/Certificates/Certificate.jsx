@@ -11,7 +11,7 @@ export class Certificates extends Component {
     return (
       <Fragment>
         <section
-          class="certificate section"
+          className="certificate section"
           id="certificates"
           contentEditable="false"
         >

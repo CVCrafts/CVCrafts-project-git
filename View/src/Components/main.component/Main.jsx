@@ -5,7 +5,7 @@ export class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        <main role="main" class="">
+        <main role="main" className="">
           <div className="landingPageContainer pt-4 md:pt-8 pb-12 lg:pt-28 lg:pb-28">
             <div className="grid grid-cols-1 justify-items-center lg:justify-items-stretch lg:grid-cols-[10fr_8fr] xl:grid-cols-[10fr_9fr] lg:gap-4">
               <div className="w-[360px] sm:w-[400px] lg:w-auto lg:order-2 relative flex">
@@ -14,7 +14,7 @@ export class Main extends Component {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 518 357"
-                    class="w-full px-4 md:px-8 lg:px-0"
+                    className="w-full px-4 md:px-8 lg:px-0"
                   >
                     <path
                       fill="#323B6E"
@@ -230,7 +230,7 @@ export class Main extends Component {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 578 497"
-                  class="absolute w-full pl-14 pr-6 lg:pr-0 lg:pl-0 top-7 lg:top-10 left-0 right-0 -z-10"
+                  className="absolute w-full pl-14 pr-6 lg:pr-0 lg:pl-0 top-7 lg:top-10 left-0 right-0 -z-10"
                 >
                   <path
                     fill="#fff"
@@ -240,23 +240,23 @@ export class Main extends Component {
                 </svg>
               </div>
               <div className="mt-12">
-                <h1 class="text-4xl md:text-5xl xl:text-6xl text-center lg:text-left font-extrabold">
+                <h1 className="text-4xl md:text-5xl xl:text-6xl text-center lg:text-left font-extrabold">
                   Build a job-winning CVs&nbsp;for&nbsp;free
                 </h1>
-                <p class="text-center text-base lg:text-left px-6 md:px-o mt-4 lg:mt-5 leading-[1.6] lg:px-0 lg:pr-20 text-gray-500 md:text-lg xl:text-xl">
+                <p className="text-center text-base lg:text-left px-6 md:px-o mt-4 lg:mt-5 leading-[1.6] lg:px-0 lg:pr-20 text-gray-500 md:text-lg xl:text-xl">
                   Set yourself apart with a modern CVs. Expert&nbsp;tips,
                   customizable templates&nbsp;&amp;&nbsp;quick PDF download
                   included.
                 </p>
-                <div class="flex justify-center mt-8 lg:justify-start lg:mt-12">
-                  <div class="flex flex-col items-center">
+                <div className="flex justify-center mt-8 lg:justify-start lg:mt-12">
+                  <div className="flex flex-col items-center">
                     <Link
-                      class="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-16 text-[19px] min-w-[240px] xl:h-18 xl:text-2xl xl:min-w-[240px] text-white bg-gradient-to-r from-brandPink to-brandRed w-[240px] md:w-[320px]"
+                      className="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-16 text-[19px] min-w-[240px] xl:h-18 xl:text-2xl xl:min-w-[240px] text-white bg-gradient-to-r from-brandPink to-brandRed w-[240px] md:w-[320px]"
                       to={"/resume"}
                     >
                       Try for free
                     </Link>
-                    <p class="max-w-full mt-5 text-center lg:text-left">
+                    <p className="max-w-full mt-5 text-center lg:text-left">
                       No account needed.
                     </p>
                   </div>

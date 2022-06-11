@@ -25,7 +25,7 @@ class TemplateThum extends Component {
           >
             {" "}
             {/*template__fadeOut*/}
-            <img src={TemplateResume} alt="" srcset={TemplateResume} />
+            <img src={TemplateResume} alt="" srcSet={TemplateResume} />
           </Link>
         </div>
       </>

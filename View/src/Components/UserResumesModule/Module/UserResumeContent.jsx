@@ -21,7 +21,7 @@ class UserResumeContent extends Component {
                 <img
                   src={UserResumeSVG}
                   alt="{UserResumeSVG}"
-                  srcset={UserResumeSVG}
+                  srcSet={UserResumeSVG}
                 />
               </div>
               <div className="">
