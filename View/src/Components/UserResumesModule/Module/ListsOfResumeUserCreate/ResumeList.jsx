@@ -1,5 +1,5 @@
 import React from "react";
-
+import { demo } from "../../../../data/demo.js";
 const ResumeList = () => {
   return (
     <>
@@ -25,27 +25,21 @@ const ResumeList = () => {
                     <div className="flex items-center">
                       <div className="w-10 h-10 bg-gray-700 rounded-sm flex items-center justify-center">
                         <p className="text-xs font-bold leading-3 text-white">
-                          FIG
+                          {demo?.templateName.charAt(0)}
                         </p>
                       </div>
                       <div className="pl-2">
                         <p className="text-sm font-medium leading-none text-gray-800">
-                          Fonts.fig
+                          {demo?.resume?.resumeName}
                         </p>
                         <p className="text-xs leading-3 text-gray-600 mt-2">
-                          Shared by Ashley Wilson
+                          {demo?.resume?.resumeNo}
                         </p>
                       </div>
                     </div>
                   </td>
                   <td className="pl-16">
                     <p>#designer</p>
-                  </td>
-                  <td>
-                    <p className="pl-16">3.7gb</p>
-                  </td>
-                  <td>
-                    <p className="pl-16">4 members</p>
                   </td>
                   <td>
                     <p className="pl-16">Shared on 21 Februray 2020</p>

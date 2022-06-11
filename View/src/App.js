@@ -12,9 +12,9 @@ function App(props) {
     <div className="min-h-screen w-full relative">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<UserResume />} />
-          {/* <Route path={`/resume/content`} element={<TemplatePage />} />
-          <Route path={`/resume`} element={<UserResume />} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path={`/resume/template`} element={<TemplatePage />} />
+          <Route path={`/resume`} element={<UserResume />} />
           {/* <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} /> */}
         </Routes>

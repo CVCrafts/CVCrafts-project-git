@@ -1,7 +1,7 @@
-export const demo = {
+const demo = {
   templateID: 849787900,
   templateName: "White Robbin",
-  Resume: {
+  resume: {
     resumeName: "Muhammad Talha",
     resumeNo: 1,
     content: {
@@ -115,3 +115,4 @@ export const demo = {
     },
   },
 };
+module.exports = {demo};

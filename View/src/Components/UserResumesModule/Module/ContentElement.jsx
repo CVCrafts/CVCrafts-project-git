@@ -11,7 +11,7 @@ class ContentElement extends Component {
               <h3 className="flex flex-1 p-4 font-semibold">Resumes</h3>
               <div className="flex w-10 items-center justify-center">
                 <div className="border-8 border-transparent border-l border-l-gray-600 ml-2 group-open:rotate-90 transition-transform origin-left">
-                  <i class="bx bxs-right-arrow bx-flip-vertical group-open:text-red-400"></i>
+                  <i className="bx bxs-right-arrow bx-flip-vertical group-open:text-red-400"></i>
                 </div>
               </div>
             </summary>

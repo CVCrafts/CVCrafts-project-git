@@ -1,16 +1,12 @@
 import React, { Component } from "react";
-
+import axios from "axios";
 import "./template.style.css";
 import TemplateThum from "./TemplateModule/TemplateThum";
 export class Template extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      template: [
-        "bw_1",
-        "bw_2",
-        "bw_3",
-      ],
+      template: ["bw_1", "bw_2", "bw_3"],
     };
 
   }
@@ -37,7 +33,9 @@ export class Template extends Component {
                     data-ll-status="entered"
                   >
                     {template.map((TemplateThums, index) => {
-                      return <TemplateThum key={index} templateID={ TemplateThums}/>
+                      return (
+                        <TemplateThum key={index} templateID={TemplateThums}/>
+                      );
                     })}
                   </div>
                 </div>

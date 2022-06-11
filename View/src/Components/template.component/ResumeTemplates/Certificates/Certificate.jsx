@@ -13,7 +13,6 @@ export class Certificates extends Component {
         <section
           className="certificate section"
           id="certificates"
-          contentEditable="false"
         >
           <h2 class="section-title">Certificates</h2>
           <CertificateContainer />
