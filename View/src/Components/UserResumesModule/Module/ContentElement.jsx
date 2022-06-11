@@ -16,7 +16,6 @@ class ContentElement extends Component {
               </div>
             </summary>
             <div className="p-4">
-              <p className="">user resume list</p>
               <ResumeList/>
             </div>
           </details>
