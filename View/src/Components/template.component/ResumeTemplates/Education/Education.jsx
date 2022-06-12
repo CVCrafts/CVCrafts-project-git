@@ -7,9 +7,9 @@ export class Educations extends Component {
   render() {
     return (
       <Fragment>
-        <section class="education sectionv " id="education">
-          <h2 class="section-title">Education</h2>
-          <div class="education__container bd-grid">
+        <section className="education sectionv " id="education">
+          <h2 className="section-title">Education</h2>
+          <div className="education__container bd-grid">
             <EducationContainer />
           </div>
         </section>

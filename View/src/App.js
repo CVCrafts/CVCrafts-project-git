@@ -7,14 +7,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Login from "./Components/LoginAndRegister.component/Login.component/Login";
 // import Register from "./Components/LoginAndRegister.component/Register.component/Register";
 import UserResume from "./Components/UserResumesModule/UserResume";
+import Editor from "./Components/Editor/Editor";
 function App(props) {
   return (
     <div className="min-h-screen w-full relative">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path={`/resume/template`} element={<TemplatePage />} />
-          <Route path={`/resume`} element={<UserResume />} />
+          <Route path="/" element={<Editor />} />
+          {/* <Route path={`/resume/template`} element={<TemplatePage />} />
+          <Route path={`/resume`} element={<UserResume />} /> */}
           {/* <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} /> */}
         </Routes>
