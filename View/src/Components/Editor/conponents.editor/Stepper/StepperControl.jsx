@@ -1,5 +1,5 @@
 import React from "react";
-import StrepperButton from "./Button/StrepperButton";
+import StrepperButton from "./Button/DownloadButton";
 
 const StepperControl = () => {
   return (
