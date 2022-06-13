@@ -1,11 +1,12 @@
 import React from "react";
+import Profile from "../profile/profile";
 
 const Summery = () => {
   return (
     <div>
       <div className=" relative top-16 mt-4">
-        <details className=" relative bg-white w-full shadow rounded group">
-          <summary className="list-none flex flex-wrap items-center cursor-pointer w-full  lg:w-full">
+        <details className=" relative bg-white w-full shadow rounded group transition-all duration-1000 ease-in-out">
+          <summary className="list-none flex flex-wrap items-center cursor-pointer w-full  lg:w-full transition-all duration-1000 ease-in-out">
             <h3 className="flex flex-1 p-4 font-bold uppercase text-red-300">
               Profile
             </h3>
@@ -15,7 +16,10 @@ const Summery = () => {
               </div>
             </div>
           </summary>
-          <div className="p-4">{/* form here */}</div>
+          <div className="p-4">
+            {/* form here */}
+            <Profile />
+          </div>
         </details>
       </div>
     </div>
