@@ -26,6 +26,7 @@ export const Header = () => {
             withCredentials: true,
           },
         });
+        // console.table(response);
       } catch (error) {
         console.log(error.message);
       }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ContentElement from "./ContentElement";
-import UserResumeSVG from "../../../images/UserResumeRedSVG.svg";
+// import UserResumeSVG from "../../../images/UserResumeRedSVG.svg";
 
 class UserResumeContent extends Component {
   render() {
@@ -18,11 +18,11 @@ class UserResumeContent extends Component {
             <div className="mt-6 grid grid-cols-1 grid-flow-row w-full justify-start gap-3 md:mt-10 md:grid-cols-none">
               <div className="hidden h-[200px] w-[200px] items-center justify-center rounded-full border-[10px] border-solid border-white md:flex lg:flex">
                 {/* svg here */}
-                <img
+                {/* <img
                   src={UserResumeSVG}
                   alt="{UserResumeSVG}"
                   srcSet={UserResumeSVG}
-                />
+                /> */}
               </div>
               <div className="">
                 {/* list of resume select */}

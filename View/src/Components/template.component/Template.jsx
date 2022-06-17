@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./template.style.css";
 import TemplateThum from "./TemplateModule/TemplateThum";
 export class Template extends Component {

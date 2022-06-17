@@ -12,11 +12,11 @@ root.render(
   <>
     <Provider store={store}>
       <Auth0Provider
-        domain={process.env.REACT_APP_AUTHOPROVIDER_DOMAIN}
-        clientId={process.env.REACT_APP_AUTHOPROVIDER_CLIENTID}
-        redirectUri={window.location.origin}
-        audience={process.env.REACT_APP_AUTHOPROVIDER_AUDIENCE}
-        scope={process.env.REACT_APP_AUTHOPROVIDER_SCOPE}
+        domain={process?.env?.REACT_APP_AUTHOPROVIDER_DOMAIN}
+        clientId={process?.env?.REACT_APP_AUTHOPROVIDER_CLIENTID}
+        redirectUri={window?.location?.origin}
+        audience={process?.env?.REACT_APP_AUTHOPROVIDER_AUDIENCE}
+        scope={process?.env?.REACT_APP_AUTHOPROVIDER_SCOPE}
         useRefreshTokens={true}
       >
         <App />
@@ -24,3 +24,4 @@ root.render(
     </Provider>
   </>
 );
+

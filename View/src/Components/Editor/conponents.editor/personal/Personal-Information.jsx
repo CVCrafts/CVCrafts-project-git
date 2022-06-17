@@ -1,8 +1,8 @@
 import React from "react";
 
-const ExperienceForm = () => {
+const PersonalInformation = () => {
   return (
-    <div>
+    <>
       <div className="mt-10 sm:mt-0">
         <div className="w-full">
           <div className="mt-5 md:mt-0 ">
@@ -12,39 +12,22 @@ const ExperienceForm = () => {
                   <div className="grid grid-cols-6 gap-6">
                     <div className="col-span-6 sm:col-span-3">
                       <label
-                        htmlFor="Job_Title"
+                        htmlFor="Fullname"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Job Title
+                        Fullname
                       </label>
                       <input
                         type="text"
-                        name="Job_Title"
-                        id="Job_Title"
+                        name="Fullname"
+                        id="Fullname"
                         autoComplete="off"
-                        placeholder="Job Title"
+                        placeholder="Fullname"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-3">
-                      <label
-                        htmlFor="Employer"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Employer
-                      </label>
-                      <input
-                        type="text"
-                        name="Employer"
-                        id="Employer"
-                        autoComplete="off"
-                        placeholder="Employer"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div>
-
-                    {/* <div className="col-span-6 sm:col-span-4">
+                    <div className="col-span-6 sm:col-span-4">
                       <label
                         htmlFor="email-address"
                         className="block text-sm font-medium text-gray-700"
@@ -55,14 +38,32 @@ const ExperienceForm = () => {
                         type="text"
                         name="email-address"
                         id="email-address"
+                        placeholder="Email address"
                         autoComplete="email"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
-                    </div> */}
+                    </div>
+
+                    <div className="col-span-6 sm:col-span-4">
+                      <label
+                        htmlFor="Phone"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        Phone
+                      </label>
+                      <input
+                        type="text"
+                        name="Phone"
+                        id="Phone"
+                        placeholder="Phone"
+                        autoComplete="off"
+                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      />
+                    </div>
 
                     <div className="col-span-6 sm:col-span-3">
                       <label
-                        htmlFor="country"
+                        htmlFor="Country"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Country
@@ -111,34 +112,36 @@ const ExperienceForm = () => {
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-6 lg:col-span-2">
+                    <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                       <label
-                        htmlFor="start_date"
+                        htmlFor="region"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Start Date
+                        State / Province
                       </label>
                       <input
-                        type={"date"}
-                        name="start_date"
-                        id="start_date"
-                        autoComplete="off"
+                        type="text"
+                        name="region"
+                        id="region"
+                        placeholder="Region"
+                        autoComplete="address-level1"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-6 lg:col-span-2">
+                    <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                       <label
-                        htmlFor="start_date"
+                        htmlFor="postal-code"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Start Date
+                        ZIP / Postal code
                       </label>
                       <input
-                        type={"date"}
-                        name="start_date"
-                        id="start_date"
-                        autoComplete="off"
+                        type="text"
+                        name="postal-code"
+                        id="postal-code"
+                        placeholder="Postal code"
+                        autoComplete="postal-code"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -162,37 +165,6 @@ const ExperienceForm = () => {
                       </div>
                       <p className="mt-2 text-sm text-gray-500"></p>
                     </div>
-                    {/* <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                      <label
-                        htmlFor="region"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        State / Province
-                      </label>
-                      <input
-                        type="text"
-                        name="region"
-                        id="region"
-                        autoComplete="address-level1"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div> */}
-
-                    {/* <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                      <label
-                        htmlFor="postal-code"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        ZIP / Postal code
-                      </label>
-                      <input
-                        type="text"
-                        name="postal-code"
-                        id="postal-code"
-                        autoComplete="postal-code"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div> */}
                   </div>
                 </div>
                 <div className="px-4 py-3 bg-gray-100 text-right sm:px-6">
@@ -208,8 +180,8 @@ const ExperienceForm = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default ExperienceForm;
+export default PersonalInformation;

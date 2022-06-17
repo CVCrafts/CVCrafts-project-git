@@ -56,7 +56,7 @@ server.use("/", homeRouter);
 
 server.use("/resume", resumeRouter);
 
-server.use("/resume", selectedResumeRouter)
+server.use("/resume", selectedResumeRouter);
 
 server.use(function (err, req, res, next) {
   if (err.name === "UnauthorizedError") {

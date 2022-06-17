@@ -2,19 +2,11 @@ import "./TemplatePage.style.css";
 
 import html2pdf from "html2pdf.js/dist/html2pdf";
 
-import { Component } from "react";
 import ResumeLeft from "../template.component/ResumeTemplates/Resume/ResumeLeft";
 import ResumeRigth from "../template.component/ResumeTemplates/Resume/ResumeRigth";
 
-export class TemplatePage extends Component {
-  constructor(props) {
-    super(props);
-    this.scaleCv = this.scaleCv.bind(this);
-    this.removeScale = this.removeScale.bind(this);
-    this.pdfDownload = this.pdfDownload.bind(this);
-    this.themeChange = this.themeChange.bind(this);
-  }
-  themeChange = (e) => {
+export const TemplatePage = () => {
+  const themeChange = (e) => {
     e.preventDefault();
     const themeButton = document.getElementById("theme-button");
 
@@ -55,57 +47,17 @@ export class TemplatePage extends Component {
       localStorage.setItem("selected-icon", getCurrentIcon());
     });
   };
-  scaleCv = () => {
+  const scaleCv = () => {
     document.body.classList.add("scale-cv");
   };
-  removeScale = () => {
+  scaleCv();
+  const removeScale = () => {
     document.body.classList.remove("scale-cv");
   };
-  pdfDownload = () => {
-    this.scaleCv();
-    // let doc = new jsPDF('p','mm','a4');
-    // doc.html(document.querySelector("#area-cv"), {
-    //   callback: (pdf) => {
-    //     pdf.save("mypdf.pdf");
-    //   }
-    // });
-    var areaCV = document.getElementById("area-cv");
-    var opt = {
-      margin: 0,
-      filename: "myfile.pdf",
-      image: { type: "jpeg", quality: 0.99 },
-      //   pagebreak: {
-      //     mode: ['avoid-all', 'css', 'legacy']
-      // },
-      pagebreak: {
-        mode: ["css", "avoid-all", "legacy"],
-        // avoid: ["tr","breakPage","p","span","h1","h2","h3","h4","section","div","Fragment"],
-        after: ".page-break",
-        before: ".page-break",
-      },
-      // pagebreak: {
-      //   before: ".newPage",
-      //   avoid: ["h2", "tr", "h3", "h4", ".field","p","span","div","section","main","h1","Fragment"]
-      // },
-      html2canvas: { scale: 1, dpi: 192, letterRendering: true },
-      jsPDF: { unit: "pt", format: "a4", orientation: "portrait" },
-    };
-    html2pdf(areaCV, opt);
-    // html2pdf()
-    //   .set(opt)
-    //   .from(areaCV)
-    //   .save()
-    setTimeout(() => {
-      // this.removeScale()
-    }, 10000);
-  };
-  componentDidMount() {
-    // this.scaleCv();
-  }
-  render() {
-    return (
-      <>
-        <i
+
+  return (
+    <>
+      {/* <i
           className="bx bx-moon change-theme"
           title="Theme"
           id="theme-button"
@@ -116,20 +68,19 @@ export class TemplatePage extends Component {
           title="Generate PDF"
           id="resume-button"
           onClick={this.pdfDownload}
-        ></i>
-        <main className="l-main bd-container">
-          {/* <!-- All elements within this div, is generated in PDF --> */}
-          <div className="resume" id="area-cv">
-            <ResumeLeft />
-            <ResumeRigth />
-          </div>
-        </main>
-        {/* <a href="#" className="scrolltop" id="scroll-top">
+        ></i> */}
+      <main className="l-main bd-container">
+        {/* <!-- All elements within this div, is generated in PDF --> */}
+        <div className="resume" id="area-cv">
+          <ResumeLeft />
+          <ResumeRigth />
+        </div>
+      </main>
+      {/* <a href="#" className="scrolltop" id="scroll-top">
                 <i className="bx bx-up-arrow-alt scrolltop"></i>
             </a> */}
-      </>
-    );
-  }
-}
+    </>
+  );
+};
 
 export default TemplatePage;

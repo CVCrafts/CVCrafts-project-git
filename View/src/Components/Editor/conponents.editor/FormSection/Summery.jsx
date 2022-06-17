@@ -7,6 +7,7 @@ import SkillForm from "../Skill_lang/SkillForm";
 import CertificateInterest from "../Certi_interest/Certificate_Interest";
 import AwardPublicationForm from "../award_publication/Award_PublicationForm";
 import References from "../references/Referience";
+import PersonalInformation from "../personal/Personal-Information";
 
 const Summery = (props) => {
   return (
@@ -103,6 +104,11 @@ const Summery = (props) => {
             ) : (
               ""
             )}
+            {
+              props.Section === "personal" ? (
+              <PersonalInformation/>
+              ) : ""
+            }
 
           </div>
         </details>
