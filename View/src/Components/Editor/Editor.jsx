@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Summery from "./conponents.editor/FormSection/Summery";
+import DesignSummery from "./conponents.editor/FormSection/Design-Summery";
 import TemplatePage from "../pages/TemplatePage";
 import pdfDownload from "./cells/editor.util";
+
 import "./Editor.style.css";
+import { Navigate, Link } from "react-router-dom";
 
 export class Editor extends Component {
   constructor(props) {
@@ -23,13 +26,23 @@ export class Editor extends Component {
         "projects",
         "publication",
       ],
+      _state_: props.state,
     };
     this.pdfCaller = this.pdfCaller.bind(this);
+    this.stateCaller = this.stateCaller.bind(this);
   }
-  pdfCaller = () => pdfDownload("area-cv");
-  render() {
-    const { _section_ } = this.state;
 
+  stateCaller = (e) =>
+    this.setState({ _state_: e?.target?.attributes[1]?.nodeValue });
+  pdfCaller = () => pdfDownload("area-cv");
+
+  componentDidUpdate = () => {
+    this.state._state_ === "design"
+      ? window.location.replace("/resume/design")
+      : window.location.replace("/resume/content");
+    window.location.replace()
+  };
+  render() {
     return (
       <div className="">
         <div className=" absolute bottom-0 top-0 overflow-y-auto left-0 lg-max-width:w-full w-1/2 mx-auto shadow-xl rounded-xl pb-2 bg-white">
@@ -45,15 +58,40 @@ export class Editor extends Component {
               <i className="bx bx-save mr-2"></i>
               Download
             </button>
-            <i className="bx bx-md bxs-book-content absolute left-0 ml-4 cursor-pointer hover:text-red-300"></i>
-            <i class="bx bx-md bxl-sketch absolute left-12 ml-4 cursor-pointer hover:text-red-300"></i>
+            <Link
+              to={"/resume/content"}
+              state={{ state: "content" }}
+              onClick={this.stateCaller}
+            >
+              <i
+                className="bx bx-md bxs-book-content absolute left-0 ml-4 cursor-pointer hover:text-red-300"
+                state={"content"}
+              ></i>
+            </Link>
+            <Link
+              to={"/resume/design"}
+              state={{ state: "design" }}
+              onClick={this.stateCaller}
+            >
+              <i
+                class="bx bx-md bxl-sketch absolute left-12 ml-4 cursor-pointer hover:text-red-300"
+                state={"design"}
+              ></i>
+            </Link>
           </div>
 
-          {_section_.map((items, index) => {
-            return <Summery Section={items} key={index} />;
-          })}
+          {this.state._state_ !== "design"
+            ? this.state._section_.map((items, index) => {
+                return <Summery Section={items} key={index} />;
+              })
+            : this.state._section_.map((items, index) => {
+                return <DesignSummery Section={items} key={index} />;
+              })}
         </div>
-        <div className="absolute w-1/2 right-0 top-0 lg-max-width:hidden">
+        <div
+          className="absolute w-1/2 right-0 top-0 lg-max-width:hidden"
+          id="body"
+        >
           <TemplatePage id="area-cv" />
         </div>
       </div>

@@ -48,7 +48,7 @@ html {
 }
 
 /*========== Variables Dark theme ==========*/
-body.dark-theme {
+#body.dark-theme {
   --title-color: #f2f2f2;
   --text-color: #bfbfbf;
   --container-color: #212121;
@@ -71,7 +71,7 @@ body.dark-theme {
   color: var(--title-color);
 }
 /*========== Font size variables to scale cv ==========*/
-body.scale-cv {
+#body.scale-cv {
   --body-font: "Poppins", sans-serif;
   --h1-font-size: 0.938rem;
   --h2-font-size: 0.938rem;

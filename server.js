@@ -58,6 +58,7 @@ server.use("/resume", resumeRouter);
 
 server.post("/resume/content", async (req, res) => {
   console.log(req?.body);
+  res.redirect("/resume/design");
 });
 
 server.use("/resume", selectedResumeRouter);

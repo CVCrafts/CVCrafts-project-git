@@ -15,7 +15,14 @@ function App(props) {
       <BrowserRouter>
         <Routes>
           <Route path={`/`} element={<Home />} />
-          <Route path={`/resume/content`} element={<Editor />} />
+          <Route
+            path={`/resume/content`}
+            element={<Editor state={"content"} />}
+          />
+          <Route
+            path={`/resume/design`}
+            element={<Editor state={"design"} />}
+          />
           <Route path={`/resume`} element={<UserResume />} />
           {/* <Route path={`/resume/template`} element={<TemplatePage />} /> */}
           {/* <Route path="/register" element={<Register />} />

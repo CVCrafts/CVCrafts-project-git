@@ -7,7 +7,8 @@ import { useEffect } from "react";
 export const TemplatePage = () => {
   useEffect(() => {
     const scaleCv = () => {
-      document.body.classList.add("scale-cv");
+      document.querySelector("#body").classList.add("scale-cv");
+      // document.body.classList.add("scale-cv");
     };
     scaleCv();
     return () => {
