@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 
 export class CertificateContainer extends Component {
   constructor(props) {
@@ -12,9 +11,11 @@ export class CertificateContainer extends Component {
       <>
         <div className="certificatie__container bd-grid">
           <div className="certificate__content">
-            <h3 className="certificate__title">{this.props.certificateName}</h3>
+            <h3 className="certificate__title">React js</h3>
             <p className="certificate__description">
-              {this.props.certificateDescription}
+              React is a declarative, efficient, and flexible JavaScript library
+              for building user interfaces. It lets you compose complex UIs from
+              small and isolated pieces of code called “components”.
             </p>
           </div>
         </div>
@@ -22,12 +23,5 @@ export class CertificateContainer extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  const { certificateName, certificateDescription } = state.certificateReducer;
-  return {
-    certificateName,
-    certificateDescription,
-  };
-};
 
-export default connect(mapStateToProps, null)(CertificateContainer);
+export default CertificateContainer;
