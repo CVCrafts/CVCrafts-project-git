@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const PersonalInformation = () => {
+  const [personal, setPersonal] = useState();
+
+  const handleChange = (event) => {
+    let { name, value } = event?.target;
+    setPersonal({
+      [name]: value,
+    });
+  };
   return (
     <>
       <div className="mt-10 sm:mt-0">
         <div className="w-full">
           <div className="mt-5 md:mt-0 ">
-            <form action="#" method="POST">
+            <form action="" method="POST">
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
-                  <div className="grid grid-cols-6 gap-6">
+                  <div className="grid grid-cols-6 gap-6" id="personal">
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="Fullname"
@@ -23,6 +31,8 @@ const PersonalInformation = () => {
                         id="Fullname"
                         autoComplete="off"
                         placeholder="Fullname"
+                        value={personal?.Fullname}
+                        onChange={handleChange}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -36,10 +46,12 @@ const PersonalInformation = () => {
                       </label>
                       <input
                         type="text"
-                        name="email-address"
+                        name="Email"
                         id="email-address"
+                        value={personal?.Email}
+                        onChange={handleChange}
                         placeholder="Email address"
-                        autoComplete="email"
+                        autoComplete="off"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -55,6 +67,8 @@ const PersonalInformation = () => {
                         type="text"
                         name="Phone"
                         id="Phone"
+                        value={personal?.Phone}
+                        onChange={handleChange}
                         placeholder="Phone"
                         autoComplete="off"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -70,8 +84,10 @@ const PersonalInformation = () => {
                       </label>
                       <input
                         type="text"
-                        name="country"
+                        name="Country"
                         id="country"
+                        value={personal?.Country}
+                        onChange={handleChange}
                         autoComplete="off"
                         placeholder="country"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -87,9 +103,11 @@ const PersonalInformation = () => {
                       </label>
                       <input
                         type="text"
-                        name="street-address"
+                        name="Street"
                         id="street-address"
                         autoComplete="off"
+                        onChange={handleChange}
+                        value={personal?.Street}
                         placeholder="Street address"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
@@ -104,8 +122,10 @@ const PersonalInformation = () => {
                       </label>
                       <input
                         type="text"
-                        name="city"
+                        name="City"
                         id="city"
+                        onChange={handleChange}
+                        value={personal?.City}
                         autoComplete="off"
                         placeholder="City"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -121,7 +141,9 @@ const PersonalInformation = () => {
                       </label>
                       <input
                         type="text"
-                        name="region"
+                        name="Region"
+                        onChange={handleChange}
+                        value={personal?.Region}
                         id="region"
                         placeholder="Region"
                         autoComplete="address-level1"
@@ -138,7 +160,9 @@ const PersonalInformation = () => {
                       </label>
                       <input
                         type="text"
-                        name="postal-code"
+                        name="Postal"
+                        onChange={handleChange}
+                        value={personal?.Postal}
                         id="postal-code"
                         placeholder="Postal code"
                         autoComplete="postal-code"
@@ -148,16 +172,18 @@ const PersonalInformation = () => {
 
                     <div className="col-span-6 sm:col-span-6 lg:col-span-full">
                       <label
-                        htmlFor="about"
+                        htmlFor="Description"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Description
                       </label>
                       <div className="mt-1">
                         <textarea
-                          id="about"
-                          name="about"
+                          id="Description"
+                          name="Description"
                           rows={3}
+                          onChange={handleChange}
+                          value={personal?.Description}
                           className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                           placeholder="Description..."
                           defaultValue={""}

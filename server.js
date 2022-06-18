@@ -56,6 +56,10 @@ server.use("/", homeRouter);
 
 server.use("/resume", resumeRouter);
 
+server.post("/resume/content", async (req, res) => {
+  console.log(req?.body);
+});
+
 server.use("/resume", selectedResumeRouter);
 
 server.use(function (err, req, res, next) {

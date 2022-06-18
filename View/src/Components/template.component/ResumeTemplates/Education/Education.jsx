@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import "../EE.style.css";
-import { connect } from "react-redux";
 import EducationContainer from "./Education.component/EducationContainer";
 
 export class Educations extends Component {
@@ -18,14 +17,4 @@ export class Educations extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  const { educationTitle, educationStudies, educationYear } =
-    state.educationReducer;
-  return {
-    educationTitle,
-    educationStudies,
-    educationYear,
-  };
-};
-
-export default connect(mapStateToProps,null)(Educations);
+export default Educations;

@@ -26,7 +26,7 @@ export const Header = () => {
             withCredentials: true,
           },
         });
-        // console.table(response);
+        console.table(response?.data);
       } catch (error) {
         console.log(error.message);
       }
@@ -41,7 +41,7 @@ export const Header = () => {
     if (isSign) {
       CallHomeAPI();
     }
-  }, [getAccessTokenSilently,isAuthenticated]);
+  }, [getAccessTokenSilently, isAuthenticated]);
 
   const isLoginLogoutNowFuncation = () => {
     if (isAuthenticated) {
