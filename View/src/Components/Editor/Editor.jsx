@@ -5,7 +5,7 @@ import TemplatePage from "../pages/TemplatePage";
 import pdfDownload from "./cells/editor.util";
 
 import "./Editor.style.css";
-import { Navigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export class Editor extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ export class Editor extends Component {
     this.state._state_ === "design"
       ? window.location.replace("/resume/design")
       : window.location.replace("/resume/content");
-    window.location.replace()
+    window.location.replace();
   };
   render() {
     return (

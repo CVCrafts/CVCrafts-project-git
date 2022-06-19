@@ -1,13 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import useStore from "../../../../app/store";
+import shallow from "zustand/shallow";
 
 const PersonalInformation = () => {
-  const [personal, setPersonal] = useState();
+  const [personal, setPersonal] = useState({});
+  const {
+    Fullname,
+    EmailAddress,
+    Phone,
+    Country,
+    City,
+    StreetAddress,
+    StateOrProvince,
+    ZipOrPostalCode,
+    Discription,
+    isSaveDocument,
+  } = useStore(
+    (state) => ({
+      Fullname: state?.Fullname,
+      EmailAddress: state?.EmailAddress,
+      Phone: state?.Phone,
+      Country: state?.Country,
+      City: state?.City,
+      StreetAddress: state?.StreetAddress,
+      StateOrProvince: state?.StateOrProvince,
+      ZipOrPostalCode: state?.ZipOrPostalCode,
+      Description: state?.Description,
+      isSaveDocument: state?.isSaveDocument,
+    }),
+    shallow
+  );
+  const onSetPersonal = useStore((state) => state.onSetPersonal);
 
   const handleChange = (event) => {
     let { name, value } = event?.target;
     setPersonal({
+      ...personal,
       [name]: value,
     });
+  };
+  const onSaveHandler = () => {
+    onSetPersonal(personal);
+    console.log(personal);
+    console.log(Fullname);
   };
   return (
     <>
@@ -195,7 +230,8 @@ const PersonalInformation = () => {
                 </div>
                 <div className="px-4 py-3 bg-gray-100 text-right sm:px-6">
                   <button
-                    type="submit"
+                    type="button"
+                    onClick={onSaveHandler}
                     className="inline-flex justify-center py-2 px-4 border-2 border-red-300 shadow-sm text-sm font-medium rounded-md text-black bg-red-300 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                   >
                     Save
