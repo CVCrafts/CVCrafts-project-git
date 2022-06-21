@@ -5,7 +5,7 @@ import OrganizationForm from "../Exper_cour_organization/OrganizationForm";
 import Profile from "../profile/profile";
 import SkillForm from "../Skill_lang/SkillForm";
 import CertificateInterest from "../Certi_interest/Certificate_Interest";
-import AwardPublicationForm from "../award_publication/Award_PublicationForm";
+import AwardPublicationForm from "../award_publication_Projects/Award_PublicationForm";
 import References from "../references/Referience";
 import PersonalInformation from "../personal/Personal-Information";
 
@@ -26,6 +26,7 @@ const Summery = (props) => {
           </summary>
           <div className="p-4">
             {/* form here */}
+
             {props.Section === "profile" ? <Profile /> : ""}
             {props.Section === "experience" ? <ExperienceForm /> : ""}
             {props.Section === "course" ? <CourseForm /> : ""}
@@ -50,6 +51,7 @@ const Summery = (props) => {
             )}
             {props.Section === "certificate" ? (
               <CertificateInterest
+                state="certificate"
                 label="Certificate"
                 label1="Additional information"
               />
@@ -58,6 +60,7 @@ const Summery = (props) => {
             )}
             {props.Section === "interest" ? (
               <CertificateInterest
+                state="interest"
                 label="Interest"
                 label1="Additional information"
               />

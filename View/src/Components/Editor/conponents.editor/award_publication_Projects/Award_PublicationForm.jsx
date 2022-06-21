@@ -7,11 +7,12 @@ import useProjectStore from "../../../../app/cells/ProjectStore";
 const AwardPublicationForm = (props) => {
   const [AwardOrPublicationOrProject, setAPP] = useState({});
 
-  const  onSetAward  = useAwardStore((state) => state.onSetAward);
-  const  onSetPublication  = usePublicationStore(
+  const onSetAward = useAwardStore((state) => state.onSetAward);
+
+  const onSetPublication = usePublicationStore(
     (state) => state.onSetPublication
   );
-  const  onSetproject  = useProjectStore((state) => state.onSetProject);
+  const onSetproject = useProjectStore((state) => state.onSetProject);
 
   const onAPPSave = () => {
     switch (props?.state) {
