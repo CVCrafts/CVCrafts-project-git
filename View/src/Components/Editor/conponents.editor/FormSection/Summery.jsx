@@ -34,7 +34,7 @@ const Summery = (props) => {
               <SkillForm
                 label="Skill"
                 label1="Information/ Sub-skills"
-                label2="Select skill level"
+                label2="Skill level"
               />
             ) : (
               ""
@@ -43,7 +43,7 @@ const Summery = (props) => {
               <SkillForm
                 label="Language"
                 label1="Additional information"
-                label2="Select language level"
+                label2="Language level"
               />
             ) : (
               ""

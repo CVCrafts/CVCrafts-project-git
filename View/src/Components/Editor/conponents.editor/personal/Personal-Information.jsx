@@ -1,35 +1,9 @@
 import React, { useState } from "react";
-import useStore from "../../../../app/store";
-import shallow from "zustand/shallow";
+import useStore from "../../../../app/cells/store";
 
 const PersonalInformation = () => {
   const [personal, setPersonal] = useState({});
-  const {
-    Fullname,
-    EmailAddress,
-    Phone,
-    Country,
-    City,
-    StreetAddress,
-    StateOrProvince,
-    ZipOrPostalCode,
-    Discription,
-    isSaveDocument,
-  } = useStore(
-    (state) => ({
-      Fullname: state?.Fullname,
-      EmailAddress: state?.EmailAddress,
-      Phone: state?.Phone,
-      Country: state?.Country,
-      City: state?.City,
-      StreetAddress: state?.StreetAddress,
-      StateOrProvince: state?.StateOrProvince,
-      ZipOrPostalCode: state?.ZipOrPostalCode,
-      Description: state?.Description,
-      isSaveDocument: state?.isSaveDocument,
-    }),
-    shallow
-  );
+
   const onSetPersonal = useStore((state) => state.onSetPersonal);
 
   const handleChange = (event) => {
@@ -39,10 +13,12 @@ const PersonalInformation = () => {
       [name]: value,
     });
   };
+
+  const personals = useStore((state) => state?.personals);
   const onSaveHandler = () => {
     onSetPersonal(personal);
-    console.log(personal);
-    console.log(Fullname);
+    console.log(personals);
+    // onSetPersonal(personal);
   };
   return (
     <>
@@ -52,8 +28,8 @@ const PersonalInformation = () => {
             <form action="" method="POST">
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
-                  <div className="grid grid-cols-6 gap-6" id="personal">
-                    <div className="col-span-6 sm:col-span-3">
+                  <div className="grid grid-cols-6 gap-6">
+                    <div className="col-span-6 sm:col-span-full">
                       <label
                         htmlFor="Fullname"
                         className="block text-sm font-medium text-gray-700"
@@ -72,7 +48,7 @@ const PersonalInformation = () => {
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-4">
+                    <div className="col-span-6 sm:col-span-full">
                       <label
                         htmlFor="email-address"
                         className="block text-sm font-medium text-gray-700"
@@ -91,7 +67,7 @@ const PersonalInformation = () => {
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-4">
+                    <div className="col-span-6 sm:col-span-full">
                       <label
                         htmlFor="Phone"
                         className="block text-sm font-medium text-gray-700"
@@ -110,7 +86,7 @@ const PersonalInformation = () => {
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-3">
+                    <div className="col-span-6 sm:col-span-full">
                       <label
                         htmlFor="Country"
                         className="block text-sm font-medium text-gray-700"
@@ -205,7 +181,7 @@ const PersonalInformation = () => {
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-6 lg:col-span-full">
+                    <div className="col-span-6 sm:col-span-full lg:col-span-full">
                       <label
                         htmlFor="Description"
                         className="block text-sm font-medium text-gray-700"
