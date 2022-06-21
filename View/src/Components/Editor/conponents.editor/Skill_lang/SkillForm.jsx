@@ -9,7 +9,9 @@ const SkillForm = (props) => {
   const onSetSkill = useSkillStore((state) => state.onSetSkill);
 
   const onSetLanguage = useLanguageStore((state) => state.onSetLanguage);
+
   const language = useLanguageStore((state) => state.language);
+
   const handleChange = (event) => {
     let { name, value } = event?.target;
     setSkillOrLanguage({
