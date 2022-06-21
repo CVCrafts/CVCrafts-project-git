@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import useStore from "../../../../app/cells/store";
+import { handleChange } from "../../cells/editor.util";
 
 const PersonalInformation = () => {
   const [personal, setPersonal] = useState({});
 
   const onSetPersonal = useStore((state) => state.onSetPersonal);
-
-  const handleChange = (event) => {
-    let { name, value } = event?.target;
-    setPersonal({
-      ...personal,
-      [name]: value,
-    });
-  };
 
   const personals = useStore((state) => state?.personals);
   const onSaveHandler = () => {
@@ -43,7 +36,9 @@ const PersonalInformation = () => {
                         autoComplete="off"
                         placeholder="Fullname"
                         value={personal?.Fullname}
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setPersonal, personal, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -60,7 +55,9 @@ const PersonalInformation = () => {
                         name="Email"
                         id="email-address"
                         value={personal?.Email}
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setPersonal, personal, evt)
+                        }
                         placeholder="Email address"
                         autoComplete="off"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -79,7 +76,9 @@ const PersonalInformation = () => {
                         name="Phone"
                         id="Phone"
                         value={personal?.Phone}
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setPersonal, personal, evt)
+                        }
                         placeholder="Phone"
                         autoComplete="off"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -98,7 +97,9 @@ const PersonalInformation = () => {
                         name="Country"
                         id="country"
                         value={personal?.Country}
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setPersonal, personal, evt)
+                        }
                         autoComplete="off"
                         placeholder="country"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -117,7 +118,9 @@ const PersonalInformation = () => {
                         name="Street"
                         id="street-address"
                         autoComplete="off"
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setPersonal, personal, evt)
+                        }
                         value={personal?.Street}
                         placeholder="Street address"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -135,7 +138,9 @@ const PersonalInformation = () => {
                         type="text"
                         name="City"
                         id="city"
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setPersonal, personal, evt)
+                        }
                         value={personal?.City}
                         autoComplete="off"
                         placeholder="City"
@@ -153,7 +158,9 @@ const PersonalInformation = () => {
                       <input
                         type="text"
                         name="Region"
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setPersonal, personal, evt)
+                        }
                         value={personal?.Region}
                         id="region"
                         placeholder="Region"
@@ -172,7 +179,9 @@ const PersonalInformation = () => {
                       <input
                         type="text"
                         name="Postal"
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setPersonal, personal, evt)
+                        }
                         value={personal?.Postal}
                         id="postal-code"
                         placeholder="Postal code"
@@ -193,7 +202,9 @@ const PersonalInformation = () => {
                           id="Description"
                           name="Description"
                           rows={3}
-                          onChange={handleChange}
+                          onChange={(evt) =>
+                            handleChange(setPersonal, personal, evt)
+                          }
                           value={personal?.Description}
                           className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                           placeholder="Description..."

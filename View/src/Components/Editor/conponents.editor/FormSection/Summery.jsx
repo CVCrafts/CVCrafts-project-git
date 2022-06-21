@@ -66,6 +66,7 @@ const Summery = (props) => {
             )}
             {props.Section === "award" ? (
               <AwardPublicationForm
+                state="award"
                 label="Award"
                 label1="Issuer"
                 label2="Date"
@@ -75,6 +76,7 @@ const Summery = (props) => {
             )}
             {props.Section === "publication" ? (
               <AwardPublicationForm
+                state="publication"
                 label="Title"
                 label1="Publisher"
                 label2="Date"
@@ -96,6 +98,7 @@ const Summery = (props) => {
 
             {props.Section === "projects" ? (
               <AwardPublicationForm
+                state="projects"
                 label="Project title"
                 label1="Sub title"
                 label2="Start date"
@@ -104,12 +107,7 @@ const Summery = (props) => {
             ) : (
               ""
             )}
-            {
-              props.Section === "personal" ? (
-              <PersonalInformation/>
-              ) : ""
-            }
-
+            {props.Section === "personal" ? <PersonalInformation /> : ""}
           </div>
         </details>
       </div>

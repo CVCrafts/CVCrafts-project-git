@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useSkillStore from "../../../../app/cells/SkillStore";
 import useLanguageStore from "../../../../app/cells/LanguageStore";
-import { json } from "body-parser";
+import { handleChange } from "../../cells/editor.util";
 
 const SkillForm = (props) => {
   let [skillOrLanguage, setSkillOrLanguage] = useState({});
@@ -9,16 +9,6 @@ const SkillForm = (props) => {
   const onSetSkill = useSkillStore((state) => state.onSetSkill);
 
   const onSetLanguage = useLanguageStore((state) => state.onSetLanguage);
-
-  const language = useLanguageStore((state) => state.language);
-
-  const handleChange = (event) => {
-    let { name, value } = event?.target;
-    setSkillOrLanguage({
-      ...skillOrLanguage,
-      [name]: value,
-    });
-  };
 
   const onSkillSave = () => {
     console.log(skillOrLanguage);
@@ -53,7 +43,9 @@ const SkillForm = (props) => {
                         autoComplete="off"
                         placeholder={props.label}
                         value={skillOrLanguage?.label}
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setSkillOrLanguage, skillOrLanguage, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -72,7 +64,9 @@ const SkillForm = (props) => {
                         autoComplete="off"
                         placeholder={props.label1}
                         value={skillOrLanguage?.label1}
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setSkillOrLanguage, skillOrLanguage, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -91,7 +85,9 @@ const SkillForm = (props) => {
                         autoComplete="off"
                         placeholder={props.label2}
                         value={skillOrLanguage?.label2}
-                        onChange={handleChange}
+                        onChange={(evt) =>
+                          handleChange(setSkillOrLanguage, skillOrLanguage, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>

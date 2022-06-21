@@ -26,6 +26,16 @@ export const pdfDownload = (id) => {
   html2pdf().set(opt).from(areaCV).save();
 };
 
+export const handleChange = (functionalSet, functionData, event) => {
+  if (event) {
+    let { name, value } = event?.target;
+    functionalSet({
+      ...functionData,
+      [name]: value,
+    });
+  }
+};
+
 export default pdfDownload;
 
 // const removeScale = () => {

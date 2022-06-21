@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { handleChange } from "../../cells/editor.util";
+import useAwardStore from "../../../../app/cells/AwardStore";
+import usePublicationStore from "../../../../app/cells/PublicationStore";
+import useProjectStore from "../../../../app/cells/ProjectStore";
 
 const AwardPublicationForm = (props) => {
+  const [AwardOrPublicationOrProject, setAPP] = useState({});
+
+  const  onSetAward  = useAwardStore((state) => state.onSetAward);
+  const  onSetPublication  = usePublicationStore(
+    (state) => state.onSetPublication
+  );
+  const  onSetproject  = useProjectStore((state) => state.onSetProject);
+
+  const onAPPSave = () => {
+    switch (props?.state) {
+      case "award":
+        onSetAward(AwardOrPublicationOrProject);
+        break;
+      case "publication":
+        onSetPublication(AwardOrPublicationOrProject);
+        break;
+      case "projects":
+        onSetproject(AwardOrPublicationOrProject);
+        break;
+
+      default:
+        console.log("Not Correct props Please chect the summery component");
+        break;
+    }
+  };
   return (
     <>
-      {" "}
       <div className="mt-10 sm:mt-0">
         <div className="w-full">
           <div className="mt-5 md:mt-0 ">
@@ -24,6 +52,9 @@ const AwardPublicationForm = (props) => {
                         id={props.label}
                         autoComplete="off"
                         placeholder={props.label}
+                        onChange={(evt) =>
+                          handleChange(setAPP, AwardOrPublicationOrProject, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -41,6 +72,9 @@ const AwardPublicationForm = (props) => {
                         id={props.label1}
                         autoComplete="off"
                         placeholder={props.label1}
+                        onChange={(evt) =>
+                          handleChange(setAPP, AwardOrPublicationOrProject, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -58,6 +92,9 @@ const AwardPublicationForm = (props) => {
                         id={props.label2}
                         autoComplete="off"
                         placeholder={props.label2}
+                        onChange={(evt) =>
+                          handleChange(setAPP, AwardOrPublicationOrProject, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -76,6 +113,13 @@ const AwardPublicationForm = (props) => {
                           id={props.label3}
                           autoComplete="off"
                           placeholder={props.label3}
+                          onChange={(evt) =>
+                            handleChange(
+                              setAPP,
+                              AwardOrPublicationOrProject,
+                              evt
+                            )
+                          }
                           className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                         />
                       </div>
@@ -97,6 +141,13 @@ const AwardPublicationForm = (props) => {
                           rows={3}
                           className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                           placeholder="Description..."
+                          onChange={(evt) =>
+                            handleChange(
+                              setAPP,
+                              AwardOrPublicationOrProject,
+                              evt
+                            )
+                          }
                           defaultValue={""}
                         />
                       </div>
@@ -106,8 +157,9 @@ const AwardPublicationForm = (props) => {
                 </div>
                 <div className="px-4 py-3 bg-gray-100 text-right sm:px-6">
                   <button
-                    type="submit"
+                    type="button"
                     className="inline-flex justify-center py-2 px-4 border-2 border-red-300 shadow-sm text-sm font-medium rounded-md text-black bg-red-300 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                    onClick={onAPPSave}
                   >
                     Save
                   </button>
