@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { handleChange } from "../../cells/editor.util";
+import useCourseStore from "../../../../app/cells/CourseStore";
 
-const ExperienceForm = () => {
+const CourseForm = () => {
+  const [course, setCourse] = useState({});
+
+  const onSetCourse = useCourseStore((state) => state.onSetCourse);
+  const onCourseSave = () => {
+    return onSetCourse(course);
+  };
+
   return (
     <div>
       <div className="mt-10 sm:mt-0">
@@ -23,6 +32,7 @@ const ExperienceForm = () => {
                         id="Course_Title"
                         autoComplete="off"
                         placeholder="Course Title"
+                        onChange={(evt) => handleChange(setCourse, course, evt)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -40,6 +50,7 @@ const ExperienceForm = () => {
                         id="Institution"
                         autoComplete="off"
                         placeholder="Institution"
+                        onChange={(evt) => handleChange(setCourse, course, evt)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -73,6 +84,7 @@ const ExperienceForm = () => {
                         id="country"
                         autoComplete="off"
                         placeholder="country"
+                        onChange={(evt) => handleChange(setCourse, course, evt)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -90,6 +102,7 @@ const ExperienceForm = () => {
                         id="street-address"
                         autoComplete="off"
                         placeholder="Street address"
+                        onChange={(evt) => handleChange(setCourse, course, evt)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -107,6 +120,7 @@ const ExperienceForm = () => {
                         id="city"
                         autoComplete="off"
                         placeholder="City"
+                        onChange={(evt) => handleChange(setCourse, course, evt)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -123,6 +137,7 @@ const ExperienceForm = () => {
                         name="start_date"
                         id="start_date"
                         autoComplete="off"
+                        onChange={(evt) => handleChange(setCourse, course, evt)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -139,6 +154,7 @@ const ExperienceForm = () => {
                         name="start_date"
                         id="start_date"
                         autoComplete="off"
+                        onChange={(evt) => handleChange(setCourse, course, evt)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -155,14 +171,15 @@ const ExperienceForm = () => {
                           id="about"
                           name="about"
                           rows={3}
+                          onChange={(evt) =>
+                            handleChange(setCourse, course, evt)
+                          }
                           className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                           placeholder="Description..."
                           defaultValue={""}
                         />
                       </div>
-                      <p className="mt-2 text-sm text-gray-500">
-
-                      </p>
+                      <p className="mt-2 text-sm text-gray-500"></p>
                     </div>
                     {/* <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                       <label
@@ -199,7 +216,8 @@ const ExperienceForm = () => {
                 </div>
                 <div className="px-4 py-3 bg-gray-100 text-right sm:px-6">
                   <button
-                    type="submit"
+                    type="button"
+                    onClick={onCourseSave}
                     className="inline-flex justify-center py-2 px-4 border-2 border-red-300 shadow-sm text-sm font-medium rounded-md text-black bg-red-300 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                   >
                     Save
@@ -214,4 +232,4 @@ const ExperienceForm = () => {
   );
 };
 
-export default ExperienceForm;
+export default CourseForm;

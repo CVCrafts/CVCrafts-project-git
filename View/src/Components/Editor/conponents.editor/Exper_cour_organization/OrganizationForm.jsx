@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExperienceForm = () => {
+const OrganizationForm = () => {
   return (
     <div>
       <div className="mt-10 sm:mt-0">
@@ -212,4 +212,4 @@ const ExperienceForm = () => {
   );
 };
 
-export default ExperienceForm;
+export default OrganizationForm;
