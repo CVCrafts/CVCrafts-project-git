@@ -1,13 +1,11 @@
-
-@media screen and (min-width: 968px){
-
-.resume__left{
+@media screen and (min-width: 968px) {
+  .resume__left {
     background: var(--container-color-alt);
-    height: inherit; 
+    height: inherit;
   }
 
   .resume__left,
-  .resume__right{
+  .resume__right {
     padding: 0 1rem;
   }
 }

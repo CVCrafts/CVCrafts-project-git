@@ -38,7 +38,7 @@ export class Editor extends Component {
 
   componentDidUpdate = () => {
     this.state._state_ === "design"
-      ? window.location.replace("/resume/design")
+      ? window.location.replace("/resume/editor")
       : window.location.replace("/resume/content");
     window.location.replace();
   };
@@ -69,7 +69,7 @@ export class Editor extends Component {
               ></i>
             </Link>
             <Link
-              to={"/resume/design"}
+              to={"/resume/editor"}
               state={{ state: "design" }}
               onClick={this.stateCaller}
             >

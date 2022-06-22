@@ -20,7 +20,7 @@ function App(props) {
             element={<Editor state={"content"} />}
           />
           <Route
-            path={`/resume/design`}
+            path={`/resume/editor`}
             element={<Editor state={"design"} />}
           />
           <Route path={`/resume`} element={<UserResume />} />

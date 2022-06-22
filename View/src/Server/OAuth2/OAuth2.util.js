@@ -18,7 +18,7 @@ var jwtCheck = jwt({
   issuer: process.env.NODE_ISSUER,
   algorithms: [process.env.NODE_ALGORITHMS],
 }).unless({
-  path: ["/", "/resume", "/resume/content", "*"],
+  path: ["/", "/resume", "/resume/content", "/resume/design", "/*"],
 });
 
 const getTokenResponseAndInformation = async (req, res) => {
