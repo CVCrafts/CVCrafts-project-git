@@ -44,20 +44,22 @@ export class Editor extends Component {
   };
   render() {
     return (
-      <div className="">
-        <div className=" absolute bottom-0 top-0 overflow-y-auto left-0 lg-max-width:w-full w-1/2 mx-auto shadow-xl rounded-xl pb-2 bg-white">
-          <div className="top-0 right-0 w-full rounded-md shadow-lg z-10 bg-gray-100 flex justify-end py-3 pr-6">
-            <button
-              type={"button"}
-              className="border-none cursor-pointer appearance-none
+      <div className=" h-full">
+        <div className=" absolute h-full top-0 overflow-y-auto left-0 xl-max-width-1184:w-full w-2/4 mx-auto rounded-xl pb-2 ">
+          <div className="top-0 right-0 w-full rounded-md shadow-lg z-10 bg-gray-100 flex justify-end py-3 pr-6 lg-max-width: h-16">
+            <div className=" lg-max-width:block">
+              <button
+                type={"button"}
+                className="border-none cursor-pointer appearance-none
             touch-manipulation flex items-center justify-center outline-none
             hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10
             text-[15px] min-w-[120px] text-white bg-primaryBlack"
-              onClick={this.pdfCaller}
-            >
-              <i className="bx bx-save mr-2"></i>
-              Download
-            </button>
+                onClick={this.pdfCaller}
+              >
+                <i className="bx bx-save mr-2"></i>
+                Download
+              </button>
+            </div>
             <Link
               to={"/resume/content"}
               state={{ state: "content" }}
@@ -89,10 +91,10 @@ export class Editor extends Component {
               })}
         </div>
         <div
-          className="absolute w-1/2 right-0 top-0 lg-max-width:hidden"
+          className="absolute w-2/4 right-0 top-0 bottom-0 xl-max-width-1184:hidden "
           id="body"
         >
-          <TemplatePage id="area-cv" />
+          <TemplatePage id={"area-cv"} />
         </div>
       </div>
     );

@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import useExperienceStore from "../../../../app/cells/ExperienceStore";
+import { handleChange } from "../../cells/editor.util";
 
 const ExperienceForm = () => {
+  const [experience, setExperience] = useState({});
+
+  const onSetExperience = useExperienceStore((state) => state?.onSetExperience);
+
+  const onExperienceSave = () => {
+    return onSetExperience(experience);
+  };
   return (
     <div>
       <div className="mt-10 sm:mt-0">
@@ -23,6 +32,9 @@ const ExperienceForm = () => {
                         id="Job_Title"
                         autoComplete="off"
                         placeholder="Job Title"
+                        onChange={(evt) =>
+                          handleChange(setExperience, experience, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -40,6 +52,9 @@ const ExperienceForm = () => {
                         id="Employer"
                         autoComplete="off"
                         placeholder="Employer"
+                        onChange={(evt) =>
+                          handleChange(setExperience, experience, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -73,6 +88,9 @@ const ExperienceForm = () => {
                         id="country"
                         autoComplete="off"
                         placeholder="country"
+                        onChange={(evt) =>
+                          handleChange(setExperience, experience, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -90,6 +108,9 @@ const ExperienceForm = () => {
                         id="street-address"
                         autoComplete="off"
                         placeholder="Street address"
+                        onChange={(evt) =>
+                          handleChange(setExperience, experience, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -107,6 +128,9 @@ const ExperienceForm = () => {
                         id="city"
                         autoComplete="off"
                         placeholder="City"
+                        onChange={(evt) =>
+                          handleChange(setExperience, experience, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -123,22 +147,28 @@ const ExperienceForm = () => {
                         name="start_date"
                         id="start_date"
                         autoComplete="off"
+                        onChange={(evt) =>
+                          handleChange(setExperience, experience, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
                     <div className="col-span-6 sm:col-span-6 lg:col-span-2">
                       <label
-                        htmlFor="start_date"
+                        htmlFor="End_date"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Start Date
+                        End Date
                       </label>
                       <input
                         type={"date"}
-                        name="start_date"
-                        id="start_date"
+                        name="End_date"
+                        id="End_date"
                         autoComplete="off"
+                        onChange={(evt) =>
+                          handleChange(setExperience, experience, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -153,8 +183,11 @@ const ExperienceForm = () => {
                       <div className="mt-1">
                         <textarea
                           id="about"
-                          name="about"
+                          name="Description"
                           rows={3}
+                          onChange={(evt) =>
+                            handleChange(setExperience, experience, evt)
+                          }
                           className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                           placeholder="Description..."
                           defaultValue={""}
@@ -197,7 +230,8 @@ const ExperienceForm = () => {
                 </div>
                 <div className="px-4 py-3 bg-gray-100 text-right sm:px-6">
                   <button
-                    type="submit"
+                    type="button"
+                    onClick={() => onExperienceSave()}
                     className="inline-flex justify-center py-2 px-4 border-2 border-red-300 shadow-sm text-sm font-medium rounded-md text-black bg-red-300 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                   >
                     Save

@@ -85,7 +85,7 @@ export const Header = () => {
             </span>
           </Link>
           <button
-            className="flex border-none cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bd-color"
+            className="flex border-none  cursor-pointer appearance-none touch-manipulation items-center justify-center outline-none hover:opacity-80 px-7 py-2 rounded-full font-extrabold h-10 text-[15px] min-w-[120px] text-white bd-color"
             // to={"/register"}
             onClick={() => {
               isLoginLogoutNowFuncation();

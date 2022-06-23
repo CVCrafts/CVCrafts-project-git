@@ -10,6 +10,8 @@ module.exports = {
 
       'xl-max-width': {'max': '1279px'},
       // => @media (max-width: 1279px) { ... }
+      'xl-max-width-1184': {'max': '1184px'},
+      // => @media (max-width: 1279px) { ... }
 
       'lg-max-width': {'max': '1023px'},
       // => @media (max-width: 1023px) { ... }
@@ -19,7 +21,12 @@ module.exports = {
 
       'sm-max-width': {'max': '639px'},
       // => @media (max-width: 639px) { ... }
-    }
+            'xs-max-width': {'max': '320px'},
+      // => @media (max-width: 320px) { ... }
+      },
+      fontSize:{
+        '2xs': '.25rem'
+      }
     },
   },
   variants: {

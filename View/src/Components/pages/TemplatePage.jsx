@@ -1,10 +1,11 @@
 import "./TemplatePage.style.css";
 
+import React, { useEffect, useState } from "react";
 import ResumeLeft from "../template.component/ResumeTemplates/Resume/ResumeLeft";
 import ResumeRigth from "../template.component/ResumeTemplates/Resume/ResumeRigth";
-import { useEffect } from "react";
 
 export const TemplatePage = () => {
+  const [resume] = useState([<ResumeLeft />, <ResumeRigth />]);
   useEffect(() => {
     const scaleCv = () => {
       document?.querySelector("#body")?.classList?.add("scale-cv");
@@ -32,8 +33,7 @@ export const TemplatePage = () => {
       <main className="l-main bd-container">
         {/* <!-- All elements within this div, is generated in PDF --> */}
         <div className="resume" id="area-cv">
-          <ResumeLeft />
-          <ResumeRigth />
+          {resume.map((items) => items)}
         </div>
       </main>
       {/* <a href="#" className="scrolltop" id="scroll-top">

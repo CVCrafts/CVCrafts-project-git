@@ -144,15 +144,15 @@ const CourseForm = () => {
 
                     <div className="col-span-6 sm:col-span-6 lg:col-span-2">
                       <label
-                        htmlFor="start_date"
+                        htmlFor="End_date"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Start Date
+                        End Date
                       </label>
                       <input
                         type={"date"}
-                        name="start_date"
-                        id="start_date"
+                        name="End_date"
+                        id="End_date"
                         autoComplete="off"
                         onChange={(evt) => handleChange(setCourse, course, evt)}
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -161,15 +161,15 @@ const CourseForm = () => {
 
                     <div className="col-span-6 sm:col-span-6 lg:col-span-full">
                       <label
-                        htmlFor="about"
+                        htmlFor="Description"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Description
                       </label>
                       <div className="mt-1">
                         <textarea
-                          id="about"
-                          name="about"
+                          id="Description"
+                          name="Description"
                           rows={3}
                           onChange={(evt) =>
                             handleChange(setCourse, course, evt)

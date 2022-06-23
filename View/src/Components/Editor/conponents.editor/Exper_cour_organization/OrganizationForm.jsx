@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import useOrganisationStore from "../../../../app/cells/OrganisationStore";
+import { handleChange } from "../../cells/editor.util";
 
 const OrganizationForm = () => {
+  const [organisation, setOrganisation] = useState({});
+
+  const onSetOrganisation = useOrganisationStore(
+    (state) => state.onSetOrganisation
+  );
+
+  const onOrganisationSave = () => onSetOrganisation(organisation);
   return (
     <div>
       <div className="mt-10 sm:mt-0">
@@ -23,6 +32,9 @@ const OrganizationForm = () => {
                         id="Organisation"
                         autoComplete="off"
                         placeholder="Organisation"
+                        onChange={(evt) =>
+                          handleChange(setOrganisation, organisation, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -40,6 +52,9 @@ const OrganizationForm = () => {
                         id="Position"
                         autoComplete="off"
                         placeholder="Position"
+                        onChange={(evt) =>
+                          handleChange(setOrganisation, organisation, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -72,6 +87,9 @@ const OrganizationForm = () => {
                         name="country"
                         id="country"
                         autoComplete="off"
+                        onChange={(evt) =>
+                          handleChange(setOrganisation, organisation, evt)
+                        }
                         placeholder="country"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
@@ -89,6 +107,9 @@ const OrganizationForm = () => {
                         name="street-address"
                         id="street-address"
                         autoComplete="off"
+                        onChange={(evt) =>
+                          handleChange(setOrganisation, organisation, evt)
+                        }
                         placeholder="Street address"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
@@ -106,6 +127,9 @@ const OrganizationForm = () => {
                         name="city"
                         id="city"
                         autoComplete="off"
+                        onChange={(evt) =>
+                          handleChange(setOrganisation, organisation, evt)
+                        }
                         placeholder="City"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
@@ -123,38 +147,47 @@ const OrganizationForm = () => {
                         name="start_date"
                         id="start_date"
                         autoComplete="off"
+                        onChange={(evt) =>
+                          handleChange(setOrganisation, organisation, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
                     <div className="col-span-6 sm:col-span-6 lg:col-span-2">
                       <label
-                        htmlFor="start_date"
+                        htmlFor="End_date"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Start Date
+                        End Date
                       </label>
                       <input
                         type={"date"}
-                        name="start_date"
-                        id="start_date"
+                        name="End_date"
+                        id="End_date"
                         autoComplete="off"
+                        onChange={(evt) =>
+                          handleChange(setOrganisation, organisation, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
                     <div className="col-span-6 sm:col-span-6 lg:col-span-full">
                       <label
-                        htmlFor="about"
+                        htmlFor="Description"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Description
                       </label>
                       <div className="mt-1">
                         <textarea
-                          id="about"
-                          name="about"
+                          id="Description"
+                          name="Description"
                           rows={3}
+                          onChange={(evt) =>
+                            handleChange(setOrganisation, organisation, evt)
+                          }
                           className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                           placeholder="Description..."
                           defaultValue={""}
@@ -197,7 +230,8 @@ const OrganizationForm = () => {
                 </div>
                 <div className="px-4 py-3 bg-gray-100 text-right sm:px-6">
                   <button
-                    type="submit"
+                    type="button"
+                    onClick={() => onOrganisationSave()}
                     className="inline-flex justify-center py-2 px-4 border-2 border-red-300 shadow-sm text-sm font-medium rounded-md text-black bg-red-300 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                   >
                     Save
