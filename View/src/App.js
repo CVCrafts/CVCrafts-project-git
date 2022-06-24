@@ -15,8 +15,8 @@ function App(props) {
     <div className="min-h-screen w-full relative">
       <BrowserRouter>
         <Routes>
-          <Route path={`/`} element={<MainTemplate />} />
-          {/* <Route
+          <Route path={`/`} element={<Home />} />
+          <Route
             path={`/resume/content`}
             element={<Editor state={"content"} />}
           />
@@ -25,7 +25,8 @@ function App(props) {
             element={<Editor state={"design"} />}
           />
           <Route path={`/resume`} element={<UserResume />} />
-          <Route path={`/resume/template`} element={<TemplatePage />} /> */}
+          <Route path={`/resume/template`} element={<TemplatePage />} />
+          <Route path={`/resume/GraySonu`} element={<MainTemplate />} />
           {/* <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} /> */}
         </Routes>

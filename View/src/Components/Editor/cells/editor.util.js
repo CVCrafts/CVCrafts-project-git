@@ -3,7 +3,7 @@ import html2pdf from "html2pdf.js";
 export const pdfDownload = (id) => {
   var areaCV = document.getElementById(id);
   var opt = {
-    margin: 0,
+    margin: 1,
     filename: "myfile.pdf",
     image: { type: "jpeg", quality: 0.99 },
     //   pagebreak: {
@@ -11,7 +11,7 @@ export const pdfDownload = (id) => {
     // },
     pagebreak: {
       mode: ["css", "avoid-all", "legacy"],
-      // avoid: ["tr","breakPage","p","span","h1","h2","h3","h4","section","div","Fragment"],
+      avoid: ["tr","breakPage","p","span","h1","h2","h3","h4","section","div","Fragment"],
       after: ".page-break",
       before: ".page-break",
     },
@@ -19,8 +19,8 @@ export const pdfDownload = (id) => {
     //   before: ".newPage",
     //   avoid: ["h2", "tr", "h3", "h4", ".field","p","span","div","section","main","h1","Fragment"]
     // },
-    html2canvas: { scale: 1, dpi: 192, letterRendering: true },
-    jsPDF: { unit: "pt", format: "a4", orientation: "portrait" },
+    html2canvas: { scale: 1, dpi: 300, letterRendering: true },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
   };
   // html2pdf(areaCV, opt);
   html2pdf().set(opt).from(areaCV).save();

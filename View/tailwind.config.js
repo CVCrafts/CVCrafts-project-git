@@ -21,8 +21,10 @@ module.exports = {
 
       'sm-max-width': {'max': '639px'},
       // => @media (max-width: 639px) { ... }
-            'xs-max-width': {'max': '320px'},
+      'mobile-s': {'max': '320px'},
       // => @media (max-width: 320px) { ... }
+      '2xmobile-s': {'max': '634px'},
+      // => @media (max-width: 640px) { ... }
       },
       fontSize:{
         '2xs': '.25rem'

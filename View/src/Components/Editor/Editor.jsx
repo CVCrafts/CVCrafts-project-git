@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Summery from "./conponents.editor/FormSection/Summery";
 import DesignSummery from "./conponents.editor/FormSection/Design-Summery";
-import TemplatePage from "../pages/TemplatePage";
+// import TemplatePage from "../pages/TemplatePage";
+import MainTemplate from "../../templates/graySonuTemplate/main";
+
 import pdfDownload from "./cells/editor.util";
 
 import "./Editor.style.css";
@@ -30,8 +32,8 @@ export class Editor extends Component {
     };
     this.pdfCaller = this.pdfCaller.bind(this);
     this.stateCaller = this.stateCaller.bind(this);
+    this.myRef = React.createRef();
   }
-
   stateCaller = (e) =>
     this.setState({ _state_: e?.target?.attributes[1]?.nodeValue });
   pdfCaller = () => pdfDownload("area-cv");
@@ -45,7 +47,7 @@ export class Editor extends Component {
   render() {
     return (
       <div className=" h-full">
-        <div className=" absolute h-full top-0 overflow-y-auto left-0 xl-max-width-1184:w-full w-2/4 mx-auto rounded-xl pb-2 ">
+        <div className=" absolute h-full top-0 overflow-y-auto left-0 md-max-width:w-full w-[33%] mx-auto rounded-xl pb-2 ">
           <div className="top-0 right-0 w-full rounded-md shadow-lg z-10 bg-gray-100 flex justify-end py-3 pr-6 lg-max-width: h-16">
             <div className=" lg-max-width:block">
               <button
@@ -76,7 +78,7 @@ export class Editor extends Component {
               onClick={this.stateCaller}
             >
               <i
-                class="bx bx-md bxl-sketch absolute left-12 ml-4 cursor-pointer hover:text-red-300"
+                className="bx bx-md bxl-sketch absolute left-12 ml-4 cursor-pointer hover:text-red-300"
                 state={"design"}
               ></i>
             </Link>
@@ -91,10 +93,11 @@ export class Editor extends Component {
               })}
         </div>
         <div
-          className="absolute w-2/4 right-0 top-0 bottom-0 xl-max-width-1184:hidden "
+          className="absolute w-[67%] h-auto right-0 top-0 md-max-width:hidden "
           id="body"
         >
-          <TemplatePage id={"area-cv"} />
+          {/* <TemplatePage id={"area-cv"} /> */}
+          <MainTemplate id={"area-cv"} />
         </div>
       </div>
     );

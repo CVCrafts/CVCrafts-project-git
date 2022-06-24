@@ -6,7 +6,7 @@ import SkillGraySonu from "./Skill-graysonu/Skill-GraySonu";
 
 const LeftSide = () => {
   return (
-    <div className="col-div-4 w-[35%] float-left">
+    <div className="col-div-4 w-[35%] float-left bg-gray-50">
       <div className="content-box pl-[40px] p-[20px]">
         <Contact />
         <br />
