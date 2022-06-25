@@ -5,7 +5,7 @@ export class Template extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      template: ["bw_1", "bw_2", "bw_3"],
+      template: ["bw_1", "GraySonu", "bw_3"],
     };
 
   }
