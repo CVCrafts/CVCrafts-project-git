@@ -1,16 +1,30 @@
 import React, { useState } from "react";
 import useStore from "../../../../app/cells/store";
 import { handleChange } from "../../cells/editor.util";
+import axios from "axios";
 
 const PersonalInformation = () => {
   const [personal, setPersonal] = useState({});
 
   const onSetPersonal = useStore((state) => state.onSetPersonal);
 
-  const personals = useStore((state) => state?.personals);
+  // const personals = useStore((state) => state?.personals);
   const onSaveHandler = () => {
+    axios.post(
+      "http://localhost:5000/resume/content",
+      JSON.stringify({
+        data: {
+          personal,
+        },
+      }),
+      {
+        headers: {
+          // Overwrite Axios's automatically set Content-Type
+          "Content-Type": "application/json",
+        },
+      }
+    );
     onSetPersonal(personal);
-    console.log(personals);
     // onSetPersonal(personal);
   };
   return (

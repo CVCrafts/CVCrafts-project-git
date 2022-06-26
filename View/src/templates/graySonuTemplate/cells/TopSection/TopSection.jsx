@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import useStore from "../../../../app/cells/store";
 
 const TopSection = () => {
+  const personal = useStore((state) => state?.personals);
+  const [heading] = useState(personal);
+  console.log(heading);
   return (
     <div className="topSection bg-gray-300 text-center p-[20px] w-[100%]">
       <p
@@ -10,7 +14,11 @@ const TopSection = () => {
       sm:text-[1rem]
       `}
       >
-        Muhammad<span className="sp1 font-thin text-red-400"> Talha</span>
+        {heading?.Fullname?.split(" ")[0]}
+        <span className="sp1 font-thin text-red-400">
+          {" "}
+          {heading?.Fullname?.split(" ")[1]}
+        </span>
       </p>
       <p
         className={`p2 text-[1.5rem] text-red-400 font-semibold m-0 mt-[10px]
@@ -19,7 +27,7 @@ const TopSection = () => {
       sm:text-[0.484rem]
       `}
       >
-        UI / UX Designer
+        {heading?.Description}
       </p>
     </div>
   );

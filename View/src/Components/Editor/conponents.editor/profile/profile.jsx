@@ -1,13 +1,29 @@
 import React, { useState } from "react";
 import useProfileStore from "../../../../app/cells/profileStore";
 import { handleChange } from "../../cells/editor.util";
-
+import axios from "axios";
 const Profile = () => {
   const [profile, setProfile] = useState({});
 
   const onSetProfile = useProfileStore((state) => state.onSetProfile);
 
-  const onProfileSave = () => onSetProfile(profile);
+  const onProfileSave = () => {
+    axios.post(
+      "/resume/content",
+      JSON.stringify({
+        data: {
+          profile,
+        },
+      }),
+      {
+        headers: {
+          // Overwrite Axios's automatically set Content-Type
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    onSetProfile(profile);
+  };
   return (
     <div className="">
       <div className="mt-5 md:mt-0 md:col-span-2">

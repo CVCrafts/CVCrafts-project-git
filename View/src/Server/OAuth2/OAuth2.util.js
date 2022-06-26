@@ -18,7 +18,14 @@ var jwtCheck = jwt({
   issuer: process.env.NODE_ISSUER,
   algorithms: [process.env.NODE_ALGORITHMS],
 }).unless({
-  path: ["/", "/resume", "/resume/content", "/resume/design", "/*"],
+  path: [
+    "/",
+    "/resume",
+    "/resume/content",
+    "/resume/design",
+    "http://localhost:3000/resume/babel/parser/lib/index.js",
+    "/*",
+  ],
 });
 
 const getTokenResponseAndInformation = async (req, res) => {
