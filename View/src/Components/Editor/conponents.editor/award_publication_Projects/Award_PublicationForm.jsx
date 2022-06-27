@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { handleChange } from "../../cells/editor.util";
+import { handleChange, OnPostAxios } from "../../cells/editor.util";
 import useAwardStore from "../../../../app/cells/AwardStore";
 import usePublicationStore from "../../../../app/cells/PublicationStore";
 import useProjectStore from "../../../../app/cells/ProjectStore";
@@ -17,9 +17,11 @@ const AwardPublicationForm = (props) => {
   const onAPPSave = () => {
     switch (props?.state) {
       case "award":
+        OnPostAxios(AwardOrPublicationOrProject).catch((e) => console.log(e));
         onSetAward(AwardOrPublicationOrProject);
         break;
       case "publication":
+        OnPostAxios(AwardOrPublicationOrProject).catch((e) => console.log(e));
         onSetPublication(AwardOrPublicationOrProject);
         break;
       case "projects":

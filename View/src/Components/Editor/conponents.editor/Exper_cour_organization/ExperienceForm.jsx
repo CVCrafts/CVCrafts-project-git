@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import useExperienceStore from "../../../../app/cells/ExperienceStore";
-import { handleChange } from "../../cells/editor.util";
-
+import { handleChange, OnPostAxios } from "../../cells/editor.util";
+import axios from "axios";
 const ExperienceForm = () => {
   const [experience, setExperience] = useState({});
 
   const onSetExperience = useExperienceStore((state) => state?.onSetExperience);
 
   const onExperienceSave = () => {
+    OnPostAxios(experience).catch((e) => console.log(e));
     return onSetExperience(experience);
   };
   return (

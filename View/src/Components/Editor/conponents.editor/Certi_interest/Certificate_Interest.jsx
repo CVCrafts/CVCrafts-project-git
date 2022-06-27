@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { handleChange } from "../../cells/editor.util";
+import { handleChange, OnPostAxios } from "../../cells/editor.util";
 import useCertificateStore from "../../../../app/cells/CertificateStore";
 import useInterestStore from "../../../../app/cells/InterestStore";
 
@@ -15,9 +15,12 @@ const CertificateInterest = (props) => {
   const onCertificateOrInterestSave = () => {
     switch (props.state) {
       case "certificate":
+        OnPostAxios(certificateOrInterest).catch((e) => console.log(e));
         onSetCertificate(certificateOrInterest);
         break;
       case "interest":
+        OnPostAxios(certificateOrInterest).catch((e) => console.log(e));
+
         onSetInterest(certificateOrInterest);
         break;
       default:

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useSkillStore from "../../../../app/cells/SkillStore";
 import useLanguageStore from "../../../../app/cells/LanguageStore";
-import { handleChange } from "../../cells/editor.util";
+import { handleChange, OnPostAxios } from "../../cells/editor.util";
 
 const SkillForm = (props) => {
   let [skillOrLanguage, setSkillOrLanguage] = useState({});
@@ -11,13 +11,14 @@ const SkillForm = (props) => {
   const onSetLanguage = useLanguageStore((state) => state.onSetLanguage);
 
   const onSkillSave = () => {
-    console.log(skillOrLanguage);
+    OnPostAxios(skillOrLanguage).catch((e) => console.log(e));
     onSetSkill(skillOrLanguage);
+    // console.log(skillOrLanguage);
   };
 
   const onLanguageSave = () => {
-    console.log(skillOrLanguage);
     onSetLanguage(skillOrLanguage);
+    // console.log(skillOrLanguage);
   };
 
   return (

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useStore from "../../../../app/cells/store";
-import { handleChange } from "../../cells/editor.util";
-import axios from "axios";
+import { handleChange, OnPostAxios } from "../../cells/editor.util";
 
 const PersonalInformation = () => {
   const [personal, setPersonal] = useState({});
@@ -10,20 +9,7 @@ const PersonalInformation = () => {
 
   // const personals = useStore((state) => state?.personals);
   const onSaveHandler = () => {
-    axios.post(
-      "http://localhost:5000/resume/content",
-      JSON.stringify({
-        data: {
-          personal,
-        },
-      }),
-      {
-        headers: {
-          // Overwrite Axios's automatically set Content-Type
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    OnPostAxios(personal).catch((e) => console.log(e));
     onSetPersonal(personal);
     // onSetPersonal(personal);
   };

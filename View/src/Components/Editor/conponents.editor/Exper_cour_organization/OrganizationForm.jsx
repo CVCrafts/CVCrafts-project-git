@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useOrganisationStore from "../../../../app/cells/OrganisationStore";
-import { handleChange } from "../../cells/editor.util";
+import { handleChange, OnPostAxios } from "../../cells/editor.util";
+import axios from "axios";
 
 const OrganizationForm = () => {
   const [organisation, setOrganisation] = useState({});
@@ -9,7 +10,10 @@ const OrganizationForm = () => {
     (state) => state.onSetOrganisation
   );
 
-  const onOrganisationSave = () => onSetOrganisation(organisation);
+  const onOrganisationSave = () => {
+    OnPostAxios(organisation).catch((e) => console.log(e));
+    return onSetOrganisation(organisation);
+  };
   return (
     <div>
       <div className="mt-10 sm:mt-0">

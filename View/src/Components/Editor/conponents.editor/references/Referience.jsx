@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import useReferienceStore from "../../../../app/cells/ReferenceStore";
-import { handleChange } from "../../cells/editor.util";
+import { handleChange, OnPostAxios } from "../../cells/editor.util";
 
 const References = (props) => {
   const [referience, setReferience] = useState({});
 
   const onSetReferience = useReferienceStore((state) => state.onSetReferience);
 
-  const onReferienceSave = () => onSetReferience(referience);
+  const onReferienceSave = () => {
+    OnPostAxios(referience).catch((e) => console.log(e));
+    onSetReferience(referience);
+  };
 
   return (
     <>

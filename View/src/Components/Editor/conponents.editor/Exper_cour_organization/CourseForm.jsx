@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { handleChange } from "../../cells/editor.util";
+import { handleChange, OnPostAxios } from "../../cells/editor.util";
 import useCourseStore from "../../../../app/cells/CourseStore";
-
 const CourseForm = () => {
   const [course, setCourse] = useState({});
 
   const onSetCourse = useCourseStore((state) => state.onSetCourse);
   const onCourseSave = () => {
+    OnPostAxios(course).catch((e) => console.log(e));
     return onSetCourse(course);
   };
 

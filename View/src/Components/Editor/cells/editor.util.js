@@ -1,5 +1,5 @@
 import html2pdf from "html2pdf.js";
-
+import axios from "axios";
 export const pdfDownload = (id) => {
   var areaCV = document.getElementById(id);
   var opt = {
@@ -11,7 +11,19 @@ export const pdfDownload = (id) => {
     // },
     pagebreak: {
       mode: ["css", "avoid-all", "legacy"],
-      avoid: ["tr","breakPage","p","span","h1","h2","h3","h4","section","div","Fragment"],
+      avoid: [
+        "tr",
+        "breakPage",
+        "p",
+        "span",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "section",
+        "div",
+        "Fragment",
+      ],
       after: ".page-break",
       before: ".page-break",
     },
@@ -34,6 +46,23 @@ export const handleChange = (functionalSet, functionData, event) => {
       [name]: value,
     });
   }
+};
+
+export const OnPostAxios = async (SenderObject) => {
+  await axios.post(
+    "/resume/content",
+    JSON.stringify({
+      data: {
+        SenderObject,
+      },
+    }),
+    {
+      headers: {
+        // Overwrite Axios's automatically set Content-Type
+        "Content-Type": "application/json",
+      },
+    }
+  );
 };
 
 export default pdfDownload;
