@@ -4,7 +4,6 @@ import RightSide from "./cells/RightSide/RightSide";
 import TopSection from "./cells/TopSection/TopSection";
 
 const MainTemplate = () => {
-
   return (
     <div
       id={"area-cv"}

@@ -52,16 +52,7 @@ export const Editor = (props) => {
               Download
             </button>
           </div>
-          <button
-            type={"button"}
-            className={`border-none cursor-pointer appearance-none ml-2
-            touch-manipulation flex items-center justify-center self-center content-center outline-none
-            hover:opacity-80 px-3 py-1 rounded-full font-extrabold h-10
-            text-[1rem] min-w-[60px] text-white bg-primaryBlack`}
-            onClick={() => null}
-          >
-            <i className="bx bx-save"></i>
-          </button>
+
           <Link
             to={"/resume/content"}
             state={{ state: "content" }}
