@@ -1,133 +1,86 @@
 import React, { useState } from "react";
-import useStore from "../../../../app/cells/store";
+import useEducationStore from "../../../../app/cells/EducationStore";
 import { handleChange, OnPostAxios } from "../../cells/editor.util";
 
-const PersonalInformation = () => {
-  const [personal, setPersonal] = useState({});
+const EducationForm = () => {
+  const [education, setEducation] = useState({});
 
-  const onSetPersonal = useStore((state) => state.onSetPersonal);
+  const onSetEducation = useEducationStore((state) => state?.onSetEducation);
 
-  // const personals = useStore((state) => state?.personals);
-  const onSaveHandler = () => {
-    OnPostAxios(personal).catch((e) => console.log(e));
-    onSetPersonal(personal);
-    // onSetPersonal(personal);
+  const onEducationSave = () => {
+    OnPostAxios(education).catch((e) => console.log(e));
+    onSetEducation(education);
   };
   return (
-    <>
+    <div>
       <div className="mt-10 sm:mt-0">
         <div className="w-full">
           <div className="mt-5 md:mt-0 ">
-            <form action="" method="POST">
+            <form action="#" method="POST">
               <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
-                    <div className="col-span-6 sm:col-span-full">
+                    <div className="col-span-full sm:col-span-full">
                       <label
-                        htmlFor="Fullname"
+                        htmlFor="Degree"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Fullname
+                        Degree
                       </label>
                       <input
                         type="text"
-                        name="Fullname"
-                        id="Fullname"
+                        name="Degree"
+                        id="JDegree"
                         autoComplete="off"
-                        placeholder="Fullname"
-                        value={personal?.Fullname}
+                        placeholder="Degree"
                         onChange={(evt) =>
-                          handleChange(setPersonal, personal, evt)
+                          handleChange(setEducation, education, evt)
                         }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-full">
+                    <div className="col-span-full sm:col-span-full">
                       <label
-                        htmlFor="email-address"
+                        htmlFor="Institute"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Email address
+                        Institute
                       </label>
                       <input
                         type="text"
-                        name="Email"
-                        id="email-address"
-                        value={personal?.Email}
-                        onChange={(evt) =>
-                          handleChange(setPersonal, personal, evt)
-                        }
-                        placeholder="Email address"
+                        name="Institute"
+                        id="EInstitute"
                         autoComplete="off"
+                        placeholder="Institute"
+                        onChange={(evt) =>
+                          handleChange(setEducation, education, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-full">
+                    <div className="col-span-full sm:col-span-full">
                       <label
-                        htmlFor="Phone"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Phone
-                      </label>
-                      <input
-                        type="text"
-                        name="Phone"
-                        id="Phone"
-                        value={personal?.Phone}
-                        onChange={(evt) =>
-                          handleChange(setPersonal, personal, evt)
-                        }
-                        placeholder="Phone"
-                        autoComplete="off"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div>
-
-                    <div className="col-span-6 sm:col-span-full">
-                      <label
-                        htmlFor="Country"
+                        htmlFor="country"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Country
                       </label>
                       <input
                         type="text"
-                        name="Country"
+                        name="country"
                         id="country"
-                        value={personal?.Country}
-                        onChange={(evt) =>
-                          handleChange(setPersonal, personal, evt)
-                        }
                         autoComplete="off"
                         placeholder="country"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div>
-
-                    <div className="col-span-6">
-                      <label
-                        htmlFor="street-address"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Street address
-                      </label>
-                      <input
-                        type="text"
-                        name="Street"
-                        id="street-address"
-                        autoComplete="off"
                         onChange={(evt) =>
-                          handleChange(setPersonal, personal, evt)
+                          handleChange(setEducation, education, evt)
                         }
-                        value={personal?.Street}
-                        placeholder="Street address"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
-                    <div className="col-span-full sm:col-span-full lg:col-span-4">
+                    <div className="col-span-full sm:col-span-full lg:col-span-full">
                       <label
                         htmlFor="city"
                         className="block text-sm font-medium text-gray-700"
@@ -136,89 +89,100 @@ const PersonalInformation = () => {
                       </label>
                       <input
                         type="text"
-                        name="City"
+                        name="city"
                         id="city"
-                        onChange={(evt) =>
-                          handleChange(setPersonal, personal, evt)
-                        }
-                        value={personal?.City}
                         autoComplete="off"
                         placeholder="City"
+                        onChange={(evt) =>
+                          handleChange(setEducation, education, evt)
+                        }
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
-                    <div className="col-span-full sm:col-span-full lg:col-span-4">
+                    <div className="col-span-full sm:col-span-full lg:col-span-full">
                       <label
-                        htmlFor="region"
+                        htmlFor="start_date"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        State / Province
+                        Start Date
                       </label>
                       <input
-                        type="text"
-                        name="Region"
+                        type={"date"}
+                        name="start_date"
+                        id="start_date"
+                        autoComplete="off"
                         onChange={(evt) =>
-                          handleChange(setPersonal, personal, evt)
+                          handleChange(setEducation, education, evt)
                         }
-                        value={personal?.Region}
-                        id="region"
-                        placeholder="Region"
-                        autoComplete="address-level1"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
-                    <div className="col-span-full sm:col-span-full lg:col-span-4">
+                    <div className="col-span-full sm:col-span-full lg:col-span-full">
                       <label
-                        htmlFor="postal-code"
+                        htmlFor="End_date"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        ZIP / Postal code
+                        End Date
                       </label>
                       <input
-                        type="text"
-                        name="Postal"
+                        type={"date"}
+                        name="end_date"
+                        id="End_date"
+                        autoComplete="off"
                         onChange={(evt) =>
-                          handleChange(setPersonal, personal, evt)
+                          handleChange(setEducation, education, evt)
                         }
-                        value={personal?.Postal}
-                        id="postal-code"
-                        placeholder="Postal code"
-                        autoComplete="postal-code"
                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
-                    <div className="col-span-6 sm:col-span-full lg:col-span-full">
+                    <div className="col-span-full sm:col-span-full lg:col-span-full">
                       <label
-                        htmlFor="Description"
+                        htmlFor="CGP"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        Enter CGP
+                      </label>
+                      <input
+                        type={"text"}
+                        name="CGP"
+                        id="CGP"
+                        autoComplete="off"
+                        onChange={(evt) =>
+                          handleChange(setEducation, education, evt)
+                        }
+                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                      />
+                    </div>
+                    {/* <div className="col-span-6 sm:col-span-6 lg:col-span-full">
+                      <label
+                        htmlFor="about"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Description
                       </label>
                       <div className="mt-1">
                         <textarea
-                          id="Description"
-                          name="Description"
+                          id="about"
+                          name="description"
                           rows={3}
                           onChange={(evt) =>
-                            handleChange(setPersonal, personal, evt)
+                            handleChange(setEducation, education, evt)
                           }
-                          value={personal?.Description}
                           className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                           placeholder="Description..."
                           defaultValue={""}
                         />
                       </div>
-                      <p className="mt-2 text-sm text-gray-500"></p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="px-4 py-3 bg-gray-100 text-right sm:px-6">
                   <button
                     type="button"
-                    onClick={onSaveHandler}
+                    onClick={() => onEducationSave()}
                     className="inline-flex justify-center py-2 px-4 border-2 border-red-300 shadow-sm text-sm font-medium rounded-md text-black bg-red-300 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                   >
                     Save
@@ -229,8 +193,8 @@ const PersonalInformation = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default PersonalInformation;
+export default EducationForm;

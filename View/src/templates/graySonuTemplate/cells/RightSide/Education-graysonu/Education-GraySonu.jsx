@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
+import useEducationStore from "../../../../../app/cells/EducationStore";
 
 const EducationGraySonu = () => {
+  const education = useEducationStore((state) => state?.education);
+  const [Education, setEducation] = useState({});
+  useMemo(() => {
+    return setEducation(education);
+  }, [education]);
   return (
     <>
       <p
@@ -12,75 +18,36 @@ const EducationGraySonu = () => {
       >
         Education
       </p>
-
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1
+      <div className="education">
+        <p
+          className={`a1 text-gray-700 text-[.533rem] font-semibold italic
      //0.868rem lg:text-[.533rem]
       md:text-[.633rem]
       sm:text-[.533rem]
       `}
-      >
-        High School of ICS (2017 - 2019)
-      </p>
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1 text-justify break-words hidden
-     //0.868rem lg:text-[.533rem]
+        >
+          {education?.start_date.split("-")[0]} {education?.Degree}
+        </p>
+        <span
+          className={`text-gray-500 text-[.533rem] font-semibold italic
+             //0.868rem lg:text-[.533rem]
       md:text-[.633rem]
       sm:text-[.533rem]
-      `}
-      >
-        Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500s, when an unknown printer took a galley of type and scrambled it to
-        make a type specimen book. It has survived not only five centuries, but
-        also the leap into electronic typesetting, remaining essentially
-        unchanged.
-      </p>
-
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1
-     //0.868rem lg:text-[.533rem]
+        `}
+        >
+          {education?.Institute}, {education?.city} ,{education?.Degree}
+        </span>
+        <br></br>
+        <span
+          className={`text-gray-500 text-[.533rem] font-semibold italic
+             //0.868rem lg:text-[.533rem]
       md:text-[.633rem]
       sm:text-[.533rem]
-      `}
-      >
-        Bachelor of Information Technology (2019 - 2023)
-      </p>
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1 text-justify break-words hidden 
-     //0.868rem lg:text-[.533rem]
-      md:text-[.633rem]
-      sm:text-[.533rem]
-      `}
-      >
-        Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500s, when an unknown printer took a galley of type and scrambled it to
-        make a type specimen book. It has survived not only five centuries, but
-        also the leap into electronic typesetting, remaining essentially
-        unchanged.
-      </p>
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1
-     //0.868rem lg:text-[.533rem]
-      md:text-[.633rem]
-      sm:text-[.533rem]
-      `}
-      >
-        Bachelor of Information Technology (2019 - 2023)
-      </p>
-
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1 text-justify break-words hidden
-     //0.868rem lg:text-[.533rem]
-      md:text-[.633rem]
-      sm:text-[.533rem]
-      `}
-      >
-        Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500s, when an unknown printer took a galley of type and scrambled it to
-        make a type specimen book. It has survived not only five centuries, but
-        also the leap into electronic typesetting, remaining essentially
-        unchanged.
-      </p>
+        `}
+        >
+          {education?.CGP} CGP
+        </span>
+      </div>
     </>
   );
 };

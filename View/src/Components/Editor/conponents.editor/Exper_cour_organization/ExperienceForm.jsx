@@ -60,22 +60,6 @@ const ExperienceForm = () => {
                       />
                     </div>
 
-                    {/* <div className="col-span-6 sm:col-span-4">
-                      <label
-                        htmlFor="email-address"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Email address
-                      </label>
-                      <input
-                        type="text"
-                        name="email-address"
-                        id="email-address"
-                        autoComplete="email"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div> */}
-
                     <div className="col-span-6 sm:col-span-3">
                       <label
                         htmlFor="country"
@@ -89,26 +73,6 @@ const ExperienceForm = () => {
                         id="country"
                         autoComplete="off"
                         placeholder="country"
-                        onChange={(evt) =>
-                          handleChange(setExperience, experience, evt)
-                        }
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div>
-
-                    <div className="col-span-6">
-                      <label
-                        htmlFor="street-address"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        Street address
-                      </label>
-                      <input
-                        type="text"
-                        name="street-address"
-                        id="street-address"
-                        autoComplete="off"
-                        placeholder="Street address"
                         onChange={(evt) =>
                           handleChange(setExperience, experience, evt)
                         }
@@ -176,7 +140,7 @@ const ExperienceForm = () => {
 
                     <div className="col-span-6 sm:col-span-6 lg:col-span-full">
                       <label
-                        htmlFor="about"
+                        htmlFor="Description"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Description
@@ -196,37 +160,6 @@ const ExperienceForm = () => {
                       </div>
                       <p className="mt-2 text-sm text-gray-500"></p>
                     </div>
-                    {/* <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                      <label
-                        htmlFor="region"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        State / Province
-                      </label>
-                      <input
-                        type="text"
-                        name="region"
-                        id="region"
-                        autoComplete="address-level1"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div> */}
-
-                    {/* <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                      <label
-                        htmlFor="postal-code"
-                        className="block text-sm font-medium text-gray-700"
-                      >
-                        ZIP / Postal code
-                      </label>
-                      <input
-                        type="text"
-                        name="postal-code"
-                        id="postal-code"
-                        autoComplete="postal-code"
-                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div> */}
                   </div>
                 </div>
                 <div className="px-4 py-3 bg-gray-100 text-right sm:px-6">

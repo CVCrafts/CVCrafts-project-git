@@ -8,6 +8,7 @@ import CertificateInterest from "../Certi_interest/Certificate_Interest";
 import AwardPublicationForm from "../award_publication_Projects/Award_PublicationForm";
 import References from "../references/Referience";
 import PersonalInformation from "../personal/Personal-Information";
+import EducationForm from "../EducationForm/EducationForm";
 
 const Summery = (props) => {
   return (
@@ -89,6 +90,7 @@ const Summery = (props) => {
             )}
             {props.Section === "references" ? (
               <References
+                state="referience"
                 label="Name"
                 label1="Job Title"
                 label2="Organisation"
@@ -111,6 +113,7 @@ const Summery = (props) => {
               ""
             )}
             {props.Section === "personal" ? <PersonalInformation /> : ""}
+            {props.Section === "education" ? <EducationForm /> : ""}
           </div>
         </details>
       </div>

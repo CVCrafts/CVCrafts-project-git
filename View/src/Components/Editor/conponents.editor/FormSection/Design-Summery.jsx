@@ -28,6 +28,7 @@ const DesignSummery = (props) => {
             {props.Section === "award" ? "" : ""}
             {props.Section === "publication" ? "" : ""}
             {props.Section === "references" ? "" : ""}
+            {props.Section === "education" ? "" : ""}
 
             {props.Section === "projects" ? "" : ""}
             {props.Section === "personal" ? "" : ""}

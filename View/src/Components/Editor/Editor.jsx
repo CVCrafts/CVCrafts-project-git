@@ -25,6 +25,7 @@ export const Editor = (props) => {
     "references",
     "projects",
     "publication",
+    "education",
   ]);
   const [_state_, setState] = useState(props?.state);
 

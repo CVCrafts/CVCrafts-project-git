@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { useMemo } from "react";
+import useExperienceStore from "../../../../../app/cells/ExperienceStore";
 
 const ExperienceGraySonu = () => {
+  const experience = useExperienceStore((state) => state?.experience);
+  const [Experience, setExperience] = useState({});
+  useMemo(() => {
+    return setExperience(experience);
+  }, [experience]);
   return (
     <>
       <p
@@ -12,98 +19,28 @@ const ExperienceGraySonu = () => {
       >
         Experience
       </p>
-
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1
+      <div className="experience">
+        <p
+          className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1
      //0.868rem lg:text-[.633rem]
       md:text-[.633rem]
       sm:text-[.533rem]
       `}
-      >
-        UI Designer in Organ (2018 - now)
-      </p>
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1 text-justify break-words
+        >
+          {Experience?.Job_Title} , {Experience?.Employer} (
+          {Experience?.start_date?.split("-")[0]} -
+          {Experience?.End_date?.split("-")[0]})
+        </p>
+        <p
+          className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1 text-justify break-words
      //0.868rem lg:text-[.533rem]
       md:text-[.633rem]
       sm:text-[.533rem]
       `}
-      >
-        Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500s, when an unknown printer took a galley of type and scrambled it to
-        make a type specimen book. It has survived not only five centuries, but
-        also the leap into electronic typesetting, remaining essentially
-        unchanged.
-      </p>
-
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1
-     //0.868rem lg:text-[.633rem]
-      md:text-[.633rem]
-      sm:text-[.533rem]
-      `}
-      >
-        UI Designer in Organ (2018 - now)
-      </p>
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1 text-justify break-words
-     //0.868rem lg:text-[.533rem]
-      md:text-[.633rem]
-      sm:text-[.533rem]
-      `}
-      >
-        Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500s, when an unknown printer took a galley of type and scrambled it to
-        make a type specimen book. It has survived not only five centuries, but
-        also the leap into electronic typesetting, remaining essentially
-        unchanged.
-      </p>
-
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1
-     //0.868rem lg:text-[.633rem]
-      md:text-[.633rem]
-      sm:text-[.533rem]
-      `}
-      >
-        UI Designer in Organ (2018 - now)
-      </p>
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1 text-justify break-words
-     //0.868rem lg:text-[.533rem]
-      md:text-[.633rem]
-      sm:text-[.533rem]
-      `}
-      >
-        Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500s, when an unknown printer took a galley of type and scrambled it to
-        make a type specimen book. It has survived not only five centuries, but
-        also the leap into electronic typesetting, remaining essentially
-        unchanged.
-      </p>
-
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1
-     //0.868rem lg:text-[.633rem]
-      md:text-[.633rem]
-      sm:text-[.533rem]
-      `}
-      >
-        UI Designer in Organ (2018 - now)
-      </p>
-      <p
-        className={`a1 text-gray-500 text-[.533rem] font-semibold mb-1 text-justify break-words
-     //0.868rem lg:text-[.533rem]
-      md:text-[.633rem]
-      sm:text-[.533rem]
-      `}
-      >
-        Lorem Ipsum has been the industry's standard dummy text ever since the
-        1500s, when an unknown printer took a galley of type and scrambled it to
-        make a type specimen book. It has survived not only five centuries, but
-        also the leap into electronic typesetting, remaining essentially
-        unchanged.
-      </p>
+        >
+          {Experience?.Description}
+        </p>
+      </div>
     </>
   );
 };
