@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+<<<<<<< HEAD
 import { Provider } from "react-redux";
 import store from "./app/store";
 
@@ -12,4 +13,12 @@ root.render(
       <App />
     </Provider>
   </React.StrictMode>
+=======
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <>
+    <App />
+  </>,
+>>>>>>> c2ddfe28dd7aaad697e5c0a58ff84c522bc455a7
 );
