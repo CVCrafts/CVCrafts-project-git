@@ -5,33 +5,33 @@ export class Skills extends Component {
   render() {
     return (
       <Fragment>
-        <section class="skills section" id="skills">
-          <div class="section-title">Skills</div>
-          <div class="skills__content bd-grid">
-            <ul class="skills__data">
-              <li class="skills__name">
-                <span class="skills__circle"></span> HTML
+        <section className="skills section" id="skills">
+          <div className="section-title">Skills</div>
+          <div className="skills__content bd-grid">
+            <ul className="skills__data">
+              <li className="skills__name">
+                <span className="skills__circle"></span> HTML
               </li>
-              <li class="skills__name">
-                <span class="skills__circle"></span> CSS
+              <li className="skills__name">
+                <span className="skills__circle"></span> CSS
               </li>
-              <li class="skills__name">
-                <span class="skills__circle"></span> JAVASCRIPT
+              <li className="skills__name">
+                <span className="skills__circle"></span> JAVASCRIPT
               </li>
-              <li class="skills__name">
-                <span class="skills__circle"></span> SCSS
+              <li className="skills__name">
+                <span className="skills__circle"></span> SCSS
               </li>
             </ul>
 
-            <ul class="skills__data">
-              <li class="skills__name">
-                <span class="skills__circle"></span> REACT JS
+            <ul className="skills__data">
+              <li className="skills__name">
+                <span className="skills__circle"></span> REACT JS
               </li>
-              <li class="skills__name">
-                <span class="skills__circle"></span> NODE JS
+              <li className="skills__name">
+                <span className="skills__circle"></span> NODE JS
               </li>
-              <li class="skills__name">
-                <span class="skills__circle"></span> MONGO DB
+              <li className="skills__name">
+                <span className="skills__circle"></span> MONGO DB
               </li>
             </ul>
           </div>

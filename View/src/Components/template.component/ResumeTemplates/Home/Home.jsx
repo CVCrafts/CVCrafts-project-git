@@ -13,25 +13,25 @@ export class Home extends Component {
   render() {
     return (
       <Fragment>
-            <section class="home" id="home" >
-              <div class="home__container section bd-grid">
-                  <div class="home__data bd-grid">
-                      <img src={""} alt="" class="home__img" hidden/>
-                      <h1 class="home__title" title='home__title'>{this.state.HomeTitle}</h1>
-                      <h3 class="home__profession" title='home__profession'>Full Stack Developer</h3>
+            <section className="home" id="home" >
+              <div className="home__container section bd-grid">
+                  <div className="home__data bd-grid">
+                      <img src={""} alt="" className="home__img" hidden/>
+                      <h1 className="home__title" title='home__title'>{this.state.HomeTitle}</h1>
+                      <h3 className="home__profession" title='home__profession'>Full Stack Developer</h3>
                   
-                      <div class="block">
-                          <a download="" href="assets/pdf/ResumeCv.pdf" class="home__button-movil"> download</a>
+                      <div className="block">
+                          <a download="" href="assets/pdf/ResumeCv.pdf" className="home__button-movil"> download</a>
                       </div>
                   </div>
-                  <div class="home__address bd-grid">
-                      <span class="home__information" title='home__information_city'>
-                          <i class="bx bx-map  home__icon"></i> 
+                  <div className="home__address bd-grid">
+                      <span className="home__information" title='home__information_city'>
+                          <i className="bx bx-map  home__icon"></i> 
                           Pakistan,Lahore</span>
-                      <span class="home__information" title='home__information_email' >
-                          <i class="bx bx-envelope home__icon"></i> mian123@gmail.com</span>
-                      <span class="home__information" title='home__information_phone'>
-                          <i class="bx bx-phone home__icon"></i>+92xxx-xxxxxxx</span>
+                      <span className="home__information" title='home__information_email' >
+                          <i className="bx bx-envelope home__icon"></i> mian123@gmail.com</span>
+                      <span className="home__information" title='home__information_phone'>
+                          <i className="bx bx-phone home__icon"></i>+92xxx-xxxxxxx</span>
                   </div>
               </div>
             {/* <!-- Theme change button --> */}

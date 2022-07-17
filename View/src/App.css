@@ -1,9 +1,7 @@
 .page-break {
-    /* page-break-after:avoid;
-    page-break-before: avoid; */
-    break-after: always;
-    break-before: always;
-    /* page-break-inside: avoid; */
-    break-inside:avoid;
+  break-after: always;
+  break-before: always;
+
+  break-inside: avoid;
 }
 /* html2pdf__ */

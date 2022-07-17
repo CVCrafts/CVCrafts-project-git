@@ -10,17 +10,17 @@ export class Social extends Component {
   render() {
     return (
       <Fragment>
-        <section class="social section ">
-          <h2 class="section-title">SOCIAL</h2>
-          <div class="social__container bd-grid">
-            <a href="https://www.linkedin.com/" class="social__link">
-              <i class="bx bxl-linkedin-square social__icon"></i>@Talha
+        <section className="social section ">
+          <h2 className="section-title">SOCIAL</h2>
+          <div className="social__container bd-grid">
+            <a href="https://www.linkedin.com/" className="social__link">
+              <i className="bx bxl-linkedin-square social__icon"></i>@Talha
             </a>
-            <a href="https://www.facebook.com/" class="social__link">
-              <i class="bx bxl-facebook social__icon"></i>@Talha
+            <a href="https://www.facebook.com/" className="social__link">
+              <i className="bx bxl-facebook social__icon"></i>@Talha
             </a>
-            <a href="https://www.instagram.com/" class="social__link">
-              <i class="bx bxl-instagram social__icon"></i>@Talha
+            <a href="https://www.instagram.com/" className="social__link">
+              <i className="bx bxl-instagram social__icon"></i>@Talha
             </a>
           </div>
         </section>
