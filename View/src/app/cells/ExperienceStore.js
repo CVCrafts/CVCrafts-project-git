@@ -2,11 +2,11 @@ import create from "zustand";
 import { persist, devtools } from "zustand/middleware";
 
 export let experienceStore = (set) => ({
-  experience: {},
+  experience: [],
   onSetExperience: (experienceObject) =>
     set((state) => ({
       ...state,
-      experience: experienceObject,
+      experience: [experienceObject],
     })),
 });
 
