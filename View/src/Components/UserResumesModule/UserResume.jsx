@@ -4,6 +4,12 @@ import UserResumeBody from "./Module/UserResumeBody";
 import UserResumeHeader from "./Module/UserResumeHeader";
 
 class UserResume extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    };
+  }
   render() {
     return (
       <>
